@@ -358,4 +358,19 @@ section {
         gap: 2rem;
         direction: ltr !important;
     }
+
+    /* Mobile Padding Adjustments */
+    section {
+        padding: 3rem 1.5rem;
+    }
+
+    .btn-reserve.large {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+
+    .footer {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
 }
