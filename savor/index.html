@@ -27,7 +27,7 @@
     <!-- Hero -->
     <header class="hero">
         <div class="hero-video-bg">
-            <video id="hero-video" muted playsinline poster="./urban-gyllstrom-MaWMfm-HCqQ-unsplash.jpg">
+            <video id="hero-video" loop muted playsinline poster="./hero-image.jpg">
                 <source src="./fine-dining.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -142,11 +142,14 @@
             }
         });
 
-        // Hero Video Scroll Scrub (Forward)
+        // Hero Video Scroll Scrub (Reverse)
         const video = document.getElementById('hero-video');
         let heroHeight = window.innerHeight;
+        let isVideoReady = false;
 
         function updateVideo() {
+            if (!isVideoReady) return; // Don't scrub until ready
+
             const scrollPos = window.scrollY;
             // Play video over the course of scrolling 1.5x the hero height
             const scrollRange = heroHeight * 1.5;
@@ -155,26 +158,25 @@
                 const progress = Math.min(scrollPos / scrollRange, 1);
 
                 if (video.duration) {
-                    // Forward: Scroll down -> Advance video
-                    video.currentTime = video.duration * progress;
+                    // Reverse: Top of page = End of video. Bottom of page = Start of video.
+                    video.currentTime = video.duration - (video.duration * progress);
                 }
             }
             requestAnimationFrame(updateVideo);
         }
 
-        // Initialize
-        video.addEventListener('loadedmetadata', () => {
+        function initVideo() {
             heroHeight = window.innerHeight;
-            video.currentTime = 0;
-            video.pause();
+            video.currentTime = video.duration || 0;
+            isVideoReady = true; // Enable scrubbing
             requestAnimationFrame(updateVideo);
-        });
+        }
+
+        video.addEventListener('loadedmetadata', initVideo);
 
         // Retrigger if already loaded
         if (video.readyState >= 1) {
-            video.currentTime = 0;
-            video.pause();
-            requestAnimationFrame(updateVideo);
+            initVideo();
         }
     </script>
 </body>
