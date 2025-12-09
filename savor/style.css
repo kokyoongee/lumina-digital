@@ -97,28 +97,56 @@ h3 {
 }
 
 /* Hero */
+/* Hero */
 .hero {
     height: 100vh;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: radial-gradient(circle, #2c3e2c33, #0f1011), url('https://images.unsplash.com/photo-1514362545857-3bc16549766b?q=80&w=1920&auto=format&fit=crop');
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: overlay;
+    overflow: hidden;
 }
 
-/* Fallback/Placeholder if image fails or for generic 'dark luxury' */
-.hero-bg {
+.hero-split-bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: black;
-    opacity: 0.4;
-    z-index: -1;
+    display: flex;
+    z-index: 0;
+}
+
+.hero-side {
+    flex: 1;
+    height: 100%;
+    position: relative;
+}
+
+.hero-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+    /* Slight dim per side */
+}
+
+/* Global Overlay to unify them */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.7) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    /* Sits on top of overlay */
 }
 
 .hero-content h1 {
