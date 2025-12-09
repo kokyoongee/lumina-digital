@@ -214,11 +214,16 @@ a {
         inset 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
-.showcase-card:hover,
 .pricing-card:hover {
     box-shadow:
         0 20px 25px -5px rgba(0, 0, 0, 0.2),
         inset 0 0 0 1px var(--color-accent);
+}
+
+.showcase-card:hover {
+    box-shadow:
+        0 20px 25px -5px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 /* Container */
