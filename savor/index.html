@@ -27,7 +27,7 @@
     <!-- Hero -->
     <header class="hero">
         <div class="hero-video-bg">
-            <video id="hero-video" autoplay loop muted playsinline poster="./urban-gyllstrom-MaWMfm-HCqQ-unsplash.jpg">
+            <video id="hero-video" muted playsinline poster="./urban-gyllstrom-MaWMfm-HCqQ-unsplash.jpg">
                 <source src="./fine-dining.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -141,6 +141,41 @@
                 navbar.classList.remove('scrolled');
             }
         });
+
+        // Hero Video Scroll Scrub (Forward)
+        const video = document.getElementById('hero-video');
+        let heroHeight = window.innerHeight;
+
+        function updateVideo() {
+            const scrollPos = window.scrollY;
+            // Play video over the course of scrolling 1.5x the hero height
+            const scrollRange = heroHeight * 1.5;
+
+            if (scrollPos < scrollRange) {
+                const progress = Math.min(scrollPos / scrollRange, 1);
+
+                if (video.duration) {
+                    // Forward: Scroll down -> Advance video
+                    video.currentTime = video.duration * progress;
+                }
+            }
+            requestAnimationFrame(updateVideo);
+        }
+
+        // Initialize
+        video.addEventListener('loadedmetadata', () => {
+            heroHeight = window.innerHeight;
+            video.currentTime = 0;
+            video.pause();
+            requestAnimationFrame(updateVideo);
+        });
+
+        // Retrigger if already loaded
+        if (video.readyState >= 1) {
+            video.currentTime = 0;
+            video.pause();
+            requestAnimationFrame(updateVideo);
+        }
     </script>
 </body>
 
