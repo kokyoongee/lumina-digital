@@ -26,13 +26,11 @@
 
     <!-- Hero -->
     <header class="hero">
-        <div class="hero-split-bg">
-            <div class="hero-side left">
-                <img src="./victoria-druc-ZdX5JCgGdDM-unsplash.jpg" alt="Nature Source">
-            </div>
-            <div class="hero-side right">
-                <img src="./andres-medina-eGPlT_RXzi8-unsplash.jpg" alt="Culinary Creation">
-            </div>
+        <div class="hero-video-bg">
+            <video autoplay muted loop playsinline poster="./restaurant-atmostphere.jpg">
+                <source src="./hero-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
@@ -133,6 +131,17 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 
 </html>
