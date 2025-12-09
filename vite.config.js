@@ -9,7 +9,7 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 main: resolve(__dirname, 'index.html'),
-                earthsea: resolve(__dirname, 'earthsea/index.html'),
+                savor: resolve(__dirname, 'savor/index.html'),
             },
         },
     },
