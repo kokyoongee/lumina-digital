@@ -27,7 +27,7 @@
     <!-- Hero -->
     <header class="hero">
         <div class="hero-video-bg">
-            <video autoplay muted loop playsinline poster="./restaurant-atmostphere.jpg">
+            <video id="hero-video" playsinline muted poster="./restaurant-atmostphere.jpg">
                 <source src="./fine-dining.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -87,15 +87,14 @@
             </div>
             <div class="menu-grid">
                 <div class="menu-item">
-                    <img src="https://images.pexels.com/photos/4553378/pexels-photo-4553378.jpeg?auto=compress&cs=tinysrgb&w=600"
-                        alt="Lobster Dish" class="dish-image">
+                    <img src="./lobster.jpeg" alt="Lobster Dish" class="dish-image">
                     <h3>Coastal Harvest</h3>
                     <p>Fresh Atlantic lobster, white wine reduction, herb butter.</p>
                 </div>
                 <div class="menu-item">
-                    <img src="./andres-medina-eGPlT_RXzi8-unsplash.jpg" alt="Roast Pork" class="dish-image">
-                    <h3>Heritage Roast</h3>
-                    <p>Slow-roasted pork belly, soy glaze, sustainably farmed.</p>
+                    <img src="./wagyu.jpeg" alt="Wagyu Steak" class="dish-image">
+                    <h3>Obsidian Marble</h3>
+                    <p>Grade A5 Wagyu, truffle potato purée, rosemary reduction.</p>
                 </div>
                 <div class="menu-item">
                     <img src="./pexels-cottonbro-4694569.jpg" alt="Amber Drink" class="dish-image">
@@ -133,6 +132,7 @@
     </footer>
 
     <script>
+        // Navbar Scroll Effect
         const navbar = document.querySelector('.navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -141,6 +141,41 @@
                 navbar.classList.remove('scrolled');
             }
         });
+
+        // Hero Video Scroll Scrub (Reverse)
+        const video = document.getElementById('hero-video');
+        let heroHeight = window.innerHeight;
+
+        function updateVideo() {
+            const scrollPos = window.scrollY;
+
+            // Only calc if we are within valid scroll range (0 to 1 viewport roughly)
+            if (scrollPos < heroHeight * 1.5) {
+                const progress = Math.min(scrollPos / heroHeight, 1);
+
+                if (video.duration) {
+                    // Reverse: Top of page = End of video. Bottom of page = Start of video.
+                    video.currentTime = video.duration - (video.duration * progress);
+                    // Standard (Forward): video.currentTime = video.duration * progress;
+                }
+            }
+            requestAnimationFrame(updateVideo);
+        }
+
+        video.addEventListener('loadedmetadata', () => {
+            heroHeight = window.innerHeight;
+            // Initialize at end
+            video.currentTime = video.duration || 0;
+            video.pause();
+            requestAnimationFrame(updateVideo);
+        });
+
+        // Retrigger in case metadata already loaded
+        if (video.readyState >= 1) {
+            video.currentTime = video.duration || 0;
+            video.pause();
+            requestAnimationFrame(updateVideo);
+        }
     </script>
 </body>
 
