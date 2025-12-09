@@ -27,7 +27,7 @@
     <!-- Hero -->
     <header class="hero">
         <div class="hero-video-bg">
-            <video id="hero-video" loop muted playsinline poster="./hero-image.jpg">
+            <video id="hero-video" loop muted playsinline preload="metadata" poster="./hero-image.jpg">
                 <source src="./fine-dining.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -178,6 +178,18 @@
         if (video.readyState >= 1) {
             initVideo();
         }
+
+        // Mobile fallback: trigger video load on first interaction
+        function triggerVideoLoad() {
+            if (!isVideoReady && video.readyState < 1) {
+                video.load();
+            }
+            // Remove listeners after first trigger
+            window.removeEventListener('touchstart', triggerVideoLoad);
+            window.removeEventListener('scroll', triggerVideoLoad);
+        }
+        window.addEventListener('touchstart', triggerVideoLoad, { once: true, passive: true });
+        window.addEventListener('scroll', triggerVideoLoad, { once: true, passive: true });
     </script>
 </body>
 
