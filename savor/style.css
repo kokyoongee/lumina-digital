@@ -213,6 +213,68 @@ section {
     opacity: 1;
 }
 
+/* The Source (Nature Section) */
+.source {
+    padding: 6rem 0;
+    background: #111;
+    /* Slightly lighter than pure black */
+}
+
+.source-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.source-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.source-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    filter: sepia(20%) brightness(0.8);
+    /* Moody filter */
+    transition: transform 0.5s;
+}
+
+.source-item:hover img {
+    transform: scale(1.05);
+}
+
+.caption {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    color: var(--color-gold);
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.centered-text {
+    padding: 0 2rem;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #ccc;
+    font-style: italic;
+}
+
+/* Responsive Source */
+@media (max-width: 900px) {
+    .source-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .source-item img {
+        height: 300px;
+    }
+}
+
 
 .menu-item h3 {
     font-size: 1.5rem;
