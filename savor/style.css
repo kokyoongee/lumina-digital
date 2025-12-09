@@ -364,13 +364,28 @@ section {
         padding: 3rem 1.5rem;
     }
 
+    .source {
+        padding: 2rem 1.5rem;
+        /* Override desktop 0px side padding */
+    }
+
+    .section-header h2 {
+        font-size: 2.5rem;
+        /* Slightly smaller than desktop 3rem */
+        margin-bottom: 1rem;
+    }
+
     .btn-reserve.large {
         padding: 0.8rem 2rem;
         font-size: 1rem;
     }
 
     .footer {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
+        padding: 3rem 1.5rem;
+    }
+
+    .footer h2 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
     }
 }
