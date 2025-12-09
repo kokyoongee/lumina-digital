@@ -27,7 +27,7 @@
     <!-- Hero -->
     <header class="hero">
         <div class="hero-video-bg">
-            <video id="hero-video" playsinline muted poster="./restaurant-atmostphere.jpg">
+            <video id="hero-video" autoplay loop muted playsinline poster="./urban-gyllstrom-MaWMfm-HCqQ-unsplash.jpg">
                 <source src="./fine-dining.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -141,41 +141,6 @@
                 navbar.classList.remove('scrolled');
             }
         });
-
-        // Hero Video Scroll Scrub (Reverse)
-        const video = document.getElementById('hero-video');
-        let heroHeight = window.innerHeight;
-
-        function updateVideo() {
-            const scrollPos = window.scrollY;
-
-            // Only calc if we are within valid scroll range (0 to 1 viewport roughly)
-            if (scrollPos < heroHeight * 1.5) {
-                const progress = Math.min(scrollPos / heroHeight, 1);
-
-                if (video.duration) {
-                    // Reverse: Top of page = End of video. Bottom of page = Start of video.
-                    video.currentTime = video.duration - (video.duration * progress);
-                    // Standard (Forward): video.currentTime = video.duration * progress;
-                }
-            }
-            requestAnimationFrame(updateVideo);
-        }
-
-        video.addEventListener('loadedmetadata', () => {
-            heroHeight = window.innerHeight;
-            // Initialize at end
-            video.currentTime = video.duration || 0;
-            video.pause();
-            requestAnimationFrame(updateVideo);
-        });
-
-        // Retrigger in case metadata already loaded
-        if (video.readyState >= 1) {
-            video.currentTime = video.duration || 0;
-            video.pause();
-            requestAnimationFrame(updateVideo);
-        }
     </script>
 </body>
 
