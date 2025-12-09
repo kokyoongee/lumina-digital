@@ -6,8 +6,8 @@
     --color-gold-dim: #8a7020;
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Lato', sans-serif;
-    --spacing-md: 2rem;
-    --spacing-lg: 5rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 3.5rem;
 }
 
 * {
@@ -93,9 +93,9 @@ h3 {
 }
 
 .btn-reserve.large {
-    padding: 1rem 3rem;
-    font-size: 1.2rem;
-    letter-spacing: 2px;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    letter-spacing: 1.5px;
 }
 
 .btn-reserve:hover {
@@ -148,26 +148,27 @@ h3 {
 }
 
 .hero-content h1 {
-    font-size: 5rem;
+    font-size: clamp(2rem, 4vw, 3.5rem);
     color: white;
     line-height: 1.1;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .hero-content p {
-    font-size: 1.2rem;
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
     color: #ccc;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .btn-hero {
     background: var(--color-gold);
     color: black;
-    padding: 1rem 2rem;
+    padding: 0.75rem 1.5rem;
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     font-weight: 700;
+    font-size: 0.85rem;
 }
 
 /* Sections */
@@ -197,8 +198,8 @@ section {
 }
 
 .text-block h2 {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
+    font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+    margin-bottom: 1rem;
 }
 
 /* Image Placeholders / Real Images */
@@ -229,9 +230,9 @@ section {
 
 .menu-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
-    margin-top: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .dish-image {
@@ -250,7 +251,7 @@ section {
 
 /* The Source (Nature Section) */
 .source {
-    padding: 6rem 0;
+    padding: 4rem 0;
     background: #111;
     /* Slightly lighter than pure black */
 }
@@ -270,7 +271,7 @@ section {
 
 .source-item img {
     width: 100%;
-    height: 400px;
+    height: 280px;
     object-fit: cover;
     filter: sepia(20%) brightness(0.8);
     /* Moody filter */
@@ -283,18 +284,18 @@ section {
 
 .caption {
     position: absolute;
-    bottom: 1rem;
-    left: 1rem;
+    bottom: 0.75rem;
+    left: 0.75rem;
     color: var(--color-gold);
     font-family: var(--font-heading);
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .centered-text {
-    padding: 0 2rem;
+    padding: 0 1.5rem;
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     color: #ccc;
     font-style: italic;
 }
@@ -312,8 +313,8 @@ section {
 
 
 .menu-item h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
     color: white;
 }
 
@@ -324,19 +325,59 @@ section {
 /* Footer */
 .footer {
     text-align: center;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
 }
 
 .footer h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+    margin-bottom: 0.75rem;
 }
 
 .footer-meta {
     margin-top: 3rem;
     font-size: 0.8rem;
     color: #555;
+}
+
+/* Tablet/Laptop */
+@media (max-width: 1200px) {
+    .navbar {
+        padding: 1.25rem 2rem;
+    }
+
+    .navbar.scrolled {
+        padding: 0.75rem 2rem;
+    }
+
+    .split {
+        gap: 2.5rem;
+    }
+
+    .source-grid {
+        gap: 1.5rem;
+    }
+
+    .source-item img {
+        height: 300px;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+
+    section {
+        padding: 4rem 1.5rem;
+    }
+
+    .source {
+        padding: 4rem 1.5rem;
+    }
+
+    .footer {
+        padding: 4rem 1.5rem;
+    }
 }
 
 /* Mobile */

@@ -142,7 +142,7 @@
             }
         });
 
-        // Hero Video Scroll Scrub (Reverse)
+        // Hero Video Scroll Scrub (Forward)
         const video = document.getElementById('hero-video');
         let heroHeight = window.innerHeight;
         let isVideoReady = false;
@@ -151,15 +151,15 @@
             if (!isVideoReady) return; // Don't scrub until ready
 
             const scrollPos = window.scrollY;
-            // Play video over the course of scrolling 1.5x the hero height
-            const scrollRange = heroHeight * 1.5;
+            // Play video over the course of scrolling 0.75x the hero height
+            const scrollRange = heroHeight * 0.75;
 
             if (scrollPos < scrollRange) {
                 const progress = Math.min(scrollPos / scrollRange, 1);
 
                 if (video.duration) {
-                    // Reverse: Top of page = End of video. Bottom of page = Start of video.
-                    video.currentTime = video.duration - (video.duration * progress);
+                    // Forward: Top of page = Start of video. Scroll down -> Advance video.
+                    video.currentTime = video.duration * progress;
                 }
             }
             requestAnimationFrame(updateVideo);
@@ -167,7 +167,7 @@
 
         function initVideo() {
             heroHeight = window.innerHeight;
-            video.currentTime = video.duration || 0;
+            video.currentTime = 0;
             isVideoReady = true; // Enable scrubbing
             requestAnimationFrame(updateVideo);
         }
