@@ -42,12 +42,18 @@
   </nav>
 
   <!-- Mobile Menu (outside nav to avoid backdrop-filter containing block) -->
-  <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+  <button class="nav__toggle" aria-label="Open menu">
     <span class="nav__toggle-line"></span>
     <span class="nav__toggle-line"></span>
     <span class="nav__toggle-line"></span>
   </button>
   <div class="nav__mobile-menu">
+    <button class="nav__close" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
     <a href="#work" class="nav__mobile-link">Work</a>
     <a href="#showcase" class="nav__mobile-link">Showcase</a>
     <a href="#services" class="nav__mobile-link">Services</a>

@@ -328,17 +328,40 @@
   transform: translateY(6px);
 }
 
-/* Toggle active state (X icon) */
-.nav__toggle.is-active .nav__toggle-line:nth-child(1) {
-  transform: translateY(0) rotate(45deg);
+/* Hide hamburger when menu is open */
+.nav__toggle.is-active {
+  display: none !important;
 }
 
-.nav__toggle.is-active .nav__toggle-line:nth-child(2) {
-  opacity: 0;
+/* Close button inside menu */
+.nav__close {
+  position: absolute;
+  top: 24px;
+  top: calc(24px + env(safe-area-inset-top, 0px));
+  right: 24px;
+  right: calc(24px + env(safe-area-inset-right, 0px));
+  width: 48px;
+  height: 48px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.nav__toggle.is-active .nav__toggle-line:nth-child(3) {
-  transform: translateY(0) rotate(-45deg);
+.nav__close svg {
+  width: 28px;
+  height: 28px;
+  color: var(--color-text);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.nav__close:hover svg {
+  color: var(--color-accent);
+  transform: scale(1.1);
 }
 
 /* Mobile Menu Overlay */
