@@ -181,8 +181,143 @@ em {
   background: var(--color-accent);
 }
 
+/* ---- Mobile Navigation Toggle ---- */
+.nav__toggle {
+  display: none; /* Hidden by default on desktop */
+  position: relative;
+  z-index: 101; /* Above mobile menu */
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-xs); /* Added padding */
+  transition: all var(--duration) ease;
+}
+
+.nav__toggle-icon {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-primary);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all var(--duration) ease;
+}
+
+.nav__toggle-icon::before,
+.nav__toggle-icon::after {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-primary);
+  position: absolute;
+  left: 0;
+  transition: all var(--duration) ease;
+}
+
+.nav__toggle-icon::before {
+  top: -8px;
+}
+
+.nav__toggle-icon::after {
+  top: 8px;
+}
+
+/* Active state (cross icon) */
+.nav__toggle.is-active {
+  position: fixed;
+  bottom: var(--space-lg);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 102; /* Above the mobile menu */
+}
+
+.nav__toggle.is-active .nav__toggle-icon {
+  background: transparent;
+}
+
+.nav__toggle.is-active .nav__toggle-icon::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.nav__toggle.is-active .nav__toggle-icon::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* ---- Mobile Menu ---- */
+.nav__mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-bg);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%); /* Hidden off-screen */
+  transition: transform var(--duration) var(--ease-out);
+  visibility: hidden; /* Hide from screen readers when closed */
+  pointer-events: none; /* Prevent interaction when closed */
+}
+
+.nav__mobile-menu.is-open {
+  transform: translateX(0); /* Slide in */
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.nav__mobile-links {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.nav__mobile-links li {
+  margin-bottom: var(--space-md);
+}
+
+.nav__mobile-link {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  transition: color var(--duration) ease;
+  display: block;
+  padding: var(--space-xs);
+}
+
+.nav__mobile-link:hover {
+  color: var(--color-accent);
+}
+
+.nav__mobile-cta {
+  font-size: 1rem;
+  padding: var(--space-md) var(--space-2xl);
+}
+
 @media (max-width: 900px) {
-  .nav__links { display: none; }
+  .nav__links,
+  .nav__cta {
+    display: none;
+  }
+
+  .nav__toggle {
+    display: block;
+  }
+
+  .nav__inner {
+    padding-right: calc(var(--container-padding) + 2rem);
+  }
 }
 
 /* ---- Buttons ---- */
