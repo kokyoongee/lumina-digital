@@ -22,10 +22,18 @@
       <a href="#about" class="nav__link">About</a>
       <a href="#contact" class="nav__link nav__link--cta">Let's Talk</a>
     </div>
-    <button class="nav__menu" aria-label="Menu">
+    <button class="nav__menu" aria-label="Menu" aria-expanded="false">
       <span></span>
       <span></span>
     </button>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="nav__mobile-menu">
+      <a href="#work" class="nav__mobile-link">Work</a>
+      <a href="#services" class="nav__mobile-link">Services</a>
+      <a href="#about" class="nav__mobile-link">About</a>
+      <a href="#contact" class="nav__mobile-link">Let's Talk</a>
+    </div>
   </nav>
 
   <!-- Hero Section with Scroll-Scrub Video -->
@@ -578,17 +586,73 @@
   </a>
 
   <script>
-    // Scroll-scrub video controller (optimized)
+    // Mobile Navigation
+    (function initMobileNav() {
+      const toggle = document.querySelector('.nav__menu');
+      const mobileMenu = document.querySelector('.nav__mobile-menu');
+      const mobileLinks = document.querySelectorAll('.nav__mobile-link');
+
+      if (!toggle || !mobileMenu) return;
+
+      function openMenu() {
+        toggle.classList.add('is-active');
+        toggle.setAttribute('aria-expanded', 'true');
+        mobileMenu.classList.add('is-open');
+        document.body.classList.add('menu-open');
+      }
+
+      function closeMenu() {
+        toggle.classList.remove('is-active');
+        toggle.setAttribute('aria-expanded', 'false');
+        mobileMenu.classList.remove('is-open');
+        document.body.classList.remove('menu-open');
+      }
+
+      toggle.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.contains('is-open');
+        if (isOpen) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      // Close menu when clicking a link
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          closeMenu();
+        });
+      });
+
+      // Close menu on escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) {
+          closeMenu();
+        }
+      });
+
+      // Close menu on resize to desktop
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 968 && mobileMenu.classList.contains('is-open')) {
+          closeMenu();
+        }
+      });
+    })();
+
+    // Scroll-scrub video controller with text reveal
     document.addEventListener('DOMContentLoaded', () => {
       const video = document.querySelector('.hero__video');
       const scrollContainer = document.querySelector('.hero-scroll-container');
       const scrollIndicator = document.querySelector('.scroll-indicator');
+      const heroContent = document.querySelector('.hero__content');
+      const heroStats = document.querySelector('.hero__stats');
 
       if (!video || !scrollContainer) return;
 
       let videoReady = false;
       let videoDuration = 0;
       let lastProgress = -1;
+      const isMobile = window.innerWidth <= 640;
 
       // Wait for video metadata to load
       video.addEventListener('loadedmetadata', () => {
@@ -628,6 +692,34 @@
           if (scrollIndicator) {
             scrollIndicator.style.opacity = Math.max(0, 1 - (progress * 4));
           }
+
+          // Mobile text reveal animation
+          if (isMobile) {
+            // Content appears between 20% and 50% scroll
+            const contentProgress = (progress - 0.2) / 0.3;
+            if (contentProgress >= 1) {
+              heroContent.classList.add('is-visible');
+            } else {
+              heroContent.classList.remove('is-visible');
+              // Smooth progressive reveal
+              const opacity = Math.max(0, Math.min(1, contentProgress));
+              const translateY = Math.max(0, 30 * (1 - contentProgress));
+              heroContent.style.opacity = opacity;
+              heroContent.style.transform = `translateY(${translateY}px)`;
+            }
+
+            // Stats appear between 40% and 70% scroll
+            const statsProgress = (progress - 0.4) / 0.3;
+            if (statsProgress >= 1) {
+              heroStats.classList.add('is-visible');
+            } else {
+              heroStats.classList.remove('is-visible');
+              const opacity = Math.max(0, Math.min(1, statsProgress));
+              const translateY = Math.max(0, 20 * (1 - statsProgress));
+              heroStats.style.opacity = opacity;
+              heroStats.style.transform = `translateY(${translateY}px)`;
+            }
+          }
         }
 
         ticking = false;
@@ -642,6 +734,22 @@
 
       // Initial call
       updateVideoTime();
+
+      // Handle resize
+      window.addEventListener('resize', () => {
+        const newIsMobile = window.innerWidth <= 640;
+        if (!newIsMobile && heroContent) {
+          // Reset styles on desktop
+          heroContent.style.opacity = '';
+          heroContent.style.transform = '';
+          heroContent.classList.remove('is-visible');
+          if (heroStats) {
+            heroStats.style.opacity = '';
+            heroStats.style.transform = '';
+            heroStats.classList.remove('is-visible');
+          }
+        }
+      });
     });
 
     // Video cards - play on hover

@@ -166,7 +166,79 @@ img {
   width: 24px;
   height: 2px;
   background: var(--color-text);
-  transition: var(--transition-fast);
+  transition: var(--transition-base);
+}
+
+/* Mobile Menu Toggle Active State */
+.nav__menu.is-active {
+  position: fixed;
+  top: 16px;
+  right: 24px;
+  z-index: 10000;
+}
+
+.nav__menu.is-active span:first-child {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.nav__menu.is-active span:last-child {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+/* Mobile Menu Overlay */
+.nav__mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background: #0a0a0a;
+  z-index: 9999;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  overflow: hidden;
+}
+
+.nav__mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Hide page content when menu is open */
+body.menu-open > *:not(.nav) {
+  visibility: hidden;
+}
+
+.nav__mobile-link {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color var(--transition-fast);
+}
+
+.nav__mobile-link:hover {
+  color: var(--color-accent);
+}
+
+/* Prevent body scroll when menu is open */
+body.menu-open {
+  overflow: hidden;
+  touch-action: none;
+}
+
+@media (max-width: 968px) {
+  .nav__mobile-menu {
+    display: flex;
+  }
 }
 
 /* Hero Scroll-Scrub Container */
@@ -1259,28 +1331,77 @@ a.contact__detail-value:hover {
     font-size: 0.8rem;
   }
 
-  /* Disable scroll-scrub on mobile for performance */
+  /* Mobile scroll-scrub with text reveal */
   .hero-scroll-container {
-    height: auto;
+    height: 200vh; /* More scroll distance for mobile */
   }
 
   .hero-sticky {
-    position: relative;
+    padding: 100px 24px 40px;
   }
 
-  .hero__video-wrapper {
-    display: none;
-  }
-
-  .hero-sticky {
+  .hero__video-overlay {
     background: linear-gradient(
-      135deg,
-      var(--color-bg) 0%,
-      var(--color-bg-elevated) 100%
+      to bottom,
+      rgba(10, 10, 10, 0.7) 0%,
+      rgba(10, 10, 10, 0.5) 50%,
+      rgba(10, 10, 10, 0.8) 100%
     );
   }
 
-  .scroll-indicator {
+  /* Text starts invisible, revealed via JS */
+  .hero__content {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.1s ease-out, transform 0.1s ease-out;
+  }
+
+  .hero__content.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .hero__title {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+
+  .hero__description {
+    font-size: 1rem;
+    margin-bottom: 32px;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero__stats {
+    flex-wrap: wrap;
+    gap: 24px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.1s ease-out, transform 0.1s ease-out;
+  }
+
+  .hero__stats.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .hero__stat-number {
+    font-size: 2rem;
+  }
+
+  .hero__visual {
     display: none;
+  }
+
+  .scroll-indicator {
+    bottom: 24px;
   }
 }
