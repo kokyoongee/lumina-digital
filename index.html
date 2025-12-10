@@ -1,191 +1,514 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="/logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumina Digital | Bespoke Digital Experiences</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lumina Digital - We craft bespoke digital experiences that outlast trends.">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;700;800&family=Playfair+Display:ital,wght@0,400;0,700&display=swap"
-        rel="stylesheet">
+  <title>Lumina Digital | Bespoke Digital Design</title>
 
-    <link rel="stylesheet" href="./style.css">
+  <!-- Styles -->
+  <link rel="stylesheet" href="./src/css/style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
 </head>
-
 <body>
 
-    <!-- Background Effects -->
-    <div class="bg-effects">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-        <div class="grid-overlay"></div>
+  <!-- Scroll Progress -->
+  <div class="scroll-progress"></div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="/" class="nav__logo" data-magnetic data-magnetic-strength="0.2">
+        LUMINA
+      </a>
+
+      <ul class="nav__links">
+        <li><a href="#work" class="nav__link">Work</a></li>
+        <li><a href="#showcase" class="nav__link">Showcase</a></li>
+        <li><a href="#services" class="nav__link">Services</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+      </ul>
+
+      <div class="btn-magnetic" data-magnetic data-magnetic-strength="0.3">
+        <a href="#contact" class="btn btn--primary btn-shine">
+          Start a Project
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero__bg">
+      <div class="hero__gradient"></div>
+      <div class="hero__noise"></div>
+      <div class="hero__grid"></div>
     </div>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">LUMINA<span class="highlight">.</span></div>
-        <div class="nav-links">
-            <a href="#work">Work</a>
-            <a href="#services">Services</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#contact" class="btn-cta">Start Project</a>
+    <div class="hero__content">
+      <span class="hero__eyebrow">
+        <span class="hero__eyebrow-dot"></span>
+        Bespoke Digital Design
+      </span>
+
+      <h1 class="hero__title">
+        <span class="hero__title-line">
+          <span class="hero__title-text">We craft digital</span>
+        </span>
+        <span class="hero__title-line">
+          <span class="hero__title-text">
+            <span class="hero__title-accent">experiences</span> that
+          </span>
+        </span>
+        <span class="hero__title-line">
+          <span class="hero__title-text">outlast trends.</span>
+        </span>
+      </h1>
+
+      <p class="hero__subtitle">
+        Transforming visionary brands into unforgettable digital presences.
+        No templates. No shortcuts. Just exceptional craft.
+      </p>
+
+      <div class="hero__cta">
+        <div class="btn-magnetic" data-magnetic data-magnetic-strength="0.4">
+          <a href="#work" class="btn btn--primary btn-ripple" data-cursor-text="View">
+            See Our Work
+          </a>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>We Forge <br> <span class="highlight">Digital Legacies</span></h1>
-            <p class="subtitle">
-                In a digital ocean of noise, we build islands of silence, beauty, and impact.
-                Your brand deserves more than a template—it deserves a masterpiece.
-            </p>
-            <a href="#pricing" class="btn-cta" style="padding: 1rem 2.5rem; font-size: 1.1rem;">View Our Proposal</a>
+        <div class="btn-magnetic" data-magnetic data-magnetic-strength="0.4">
+          <a href="#contact" class="btn btn--outline btn-fill">
+            Get in Touch
+          </a>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <!-- Portfolio Section -->
-    <section id="work" class="portfolio">
-        <div class="container">
-            <h2>Recent <span class="highlight-gold">Client Work</span></h2>
+    <div class="hero__scroll">
+      <span class="hero__scroll-text">Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
 
-            <div class="showcase-card">
-                <div class="showcase-image">
-                    <!-- User selected atmosphere shot -->
-                    <img src="./savor/restaurant-atmostphere.jpg" alt="Savor Restaurant Atmosphere">
+  <!-- Work Section -->
+  <section id="work" class="section-work">
+    <div class="container">
+      <header class="section-header" data-animate="fade-up">
+        <span class="section-header__eyebrow">Selected Work</span>
+        <h2 class="section-header__title">Projects that speak volumes</h2>
+        <p class="section-header__subtitle">
+          Each project is a collaboration, a story, and a testament to what's possible when vision meets craft.
+        </p>
+      </header>
 
-                    <!-- Overlay Content -->
-                    <div class="showcase-overlay">
-                        <span class="overlay-eyebrow">The Art of Gastronomy</span>
-                        <h3 class="overlay-title">Taste the <br> Extraordinary</h3>
-                        <p class="overlay-subtitle">An immersive culinary journey inspired by nature.</p>
-                        <a href="./savor/index.html" target="_blank" class="btn-overlay">Book Experience</a>
-                    </div>
-                </div>
-                <div class="showcase-info">
-                    <span class="showcase-tag">Hospitality</span>
-                    <h3>Savor Fine Dining</h3>
-                    <p style="color: var(--color-text-muted);">
-                        A high-end, immersive single-page experience for a luxury restaurant. Features parallax
-                        scrolling,
-                        moody aesthetics, and mobile-first reservation booking.
-                    </p>
-                    <ul class="features" style="border: none;">
-                        <li>Custom Design System</li>
-                        <li>Responsive Gallery</li>
-                        <li>Brand Storytelling</li>
-                    </ul>
-                    <a href="./savor/index.html" target="_blank" class="showcase-link">Visit Live Site &rarr;</a>
-                </div>
+      <div class="projects-grid" data-animate="stagger">
+        <!-- Project 1: Noir Studio -->
+        <article class="project-card card-lift" data-tilt data-cursor-text="View Project">
+          <a href="./noir/">
+            <div class="project-card__image-wrapper">
+              <img
+                src="./noir/neon-dreams-thumb.jpg"
+                alt="Noir Studio"
+                class="project-card__image"
+              >
+              <div class="project-card__overlay">
+                <span class="project-card__category">Creative Agency</span>
+              </div>
             </div>
-
-        </div>
-    </section>
-
-    <!-- Services & Pricing -->
-    <section id="pricing" class="pricing">
-        <div class="container">
-            <h2>Investment <span class="highlight">Proposals</span></h2>
-            <p class="subtitle" style="text-align: center; margin-bottom: 4rem;">
-                Transparent pricing for Malaysia's visionary businesses.
-            </p>
-
-            <div class="pricing-grid">
-                <!-- Starter -->
-                <div class="pricing-card">
-                    <h3>Essential</h3>
-                    <div class="price">RM 2,800</div>
-                    <p style="color: var(--color-text-muted);">Perfect for personal brands & portfolios.</p>
-                    <ul class="features">
-                        <li>Custom One-Page Design</li>
-                        <li>Mobile Responsive</li>
-                        <li>Basic SEO Setup</li>
-                        <li>Contact Form Integration</li>
-                        <li>1 Month Support</li>
-                    </ul>
-                    <a href="#contact" class="btn-cta outline">Select Plan</a>
-                </div>
-
-                <!-- Business -->
-                <div class="pricing-card featured">
-                    <div class="showcase-tag"
-                        style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--color-accent); color: #000; padding: 0.2rem 1rem; border-radius: 20px;">
-                        Most Popular</div>
-                    <h3>Professional</h3>
-                    <div class="price">RM 5,500</div>
-                    <p style="color: var(--color-text-muted);">For businesses ready to scale.</p>
-                    <ul class="features">
-                        <li>Up to 5 Custom Pages</li>
-                        <li>CMS (Content Management)</li>
-                        <li>Advanced Animations</li>
-                        <li>Blog / News Section</li>
-                        <li>Google Analytics Setup</li>
-                        <li>3 Months Support</li>
-                    </ul>
-                    <a href="#contact" class="btn-cta">Select Plan</a>
-                </div>
-
-                <!-- E-Commerce -->
-                <div class="pricing-card">
-                    <h3>Commerce</h3>
-                    <div class="price">RM 8,500<span style="font-size: 1.5rem">+</span></div>
-                    <p style="color: var(--color-text-muted);">Full online store capabilities.</p>
-                    <ul class="features">
-                        <li>Full Product Catalog</li>
-                        <li>Secure Payment Gateway</li>
-                        <li>Inventory Management</li>
-                        <li>Customer Login Portal</li>
-                        <li>Email Marketing Integration</li>
-                        <li>6 Months Support</li>
-                    </ul>
-                    <a href="#contact" class="btn-cta outline">Select Plan</a>
-                </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">Noir Studio</h3>
+              <p class="project-card__description">Bold creative agency with scroll-controlled video and dark luxury aesthetic.</p>
             </div>
+          </a>
+        </article>
 
-            <!-- Custom / Enterprise Block -->
-            <div class="pricing-card featured custom-quote-block">
-                <div class="custom-info">
-                    <h3>Custom Requirement?</h3>
-                    <p style="color: var(--color-text-muted); margin-bottom: 0;">
-                        We understand that every vision is unique. If these packages don't fit,
-                        send us your requirements and we will craft a bespoke quotation for you.
-                    </p>
+        <!-- Project 2: Savor -->
+        <article class="project-card card-lift" data-tilt data-cursor-text="View Project">
+          <a href="./savor/">
+            <div class="project-card__image-wrapper">
+              <img
+                src="./savor/hero-image.jpg"
+                alt="Savor Fine Dining"
+                class="project-card__image"
+              >
+              <div class="project-card__overlay">
+                <span class="project-card__category">Restaurant</span>
+              </div>
+            </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">Savor Fine Dining</h3>
+              <p class="project-card__description">An immersive digital experience for a luxury culinary destination.</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Project 3: Artisan -->
+        <article class="project-card card-lift" data-tilt data-cursor-text="View Project">
+          <a href="./artisan/">
+            <div class="project-card__image-wrapper">
+              <img
+                src="./artisan/images/bowl-main.jpg"
+                alt="Artisan Collective"
+                class="project-card__image"
+              >
+              <div class="project-card__overlay">
+                <span class="project-card__category">E-Commerce</span>
+              </div>
+            </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">Artisan Collective</h3>
+              <p class="project-card__description">Curated marketplace for handcrafted luxury goods.</p>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Website Showcase Section -->
+  <section id="showcase" class="section-showcase">
+    <div class="container">
+      <header class="section-header" data-animate="fade-up">
+        <span class="section-header__eyebrow">Live Examples</span>
+        <h2 class="section-header__title">Websites in action</h2>
+        <p class="section-header__subtitle">
+          Hover to scroll through our live projects. Every pixel placed with purpose.
+        </p>
+      </header>
+
+      <div class="showcase-grid">
+        <!-- Featured Project: Noir Studio -->
+        <div class="showcase-item showcase-item--featured" data-animate="fade-up">
+          <a href="./noir/" class="browser-mockup card-lift" data-cursor-text="Explore">
+            <div class="browser-mockup__header">
+              <div class="browser-mockup__dots">
+                <span class="browser-mockup__dot browser-mockup__dot--red"></span>
+                <span class="browser-mockup__dot browser-mockup__dot--yellow"></span>
+                <span class="browser-mockup__dot browser-mockup__dot--green"></span>
+              </div>
+              <div class="browser-mockup__url">noir-studio.design</div>
+              <span class="live-badge">
+                <span class="live-badge__dot"></span>
+                Live
+              </span>
+            </div>
+            <div class="browser-mockup__content">
+              <img
+                src="./noir/thumbnail.jpg"
+                alt="Noir Studio Website"
+                class="browser-mockup__image"
+              >
+              <div class="browser-mockup__overlay">
+                <h3 class="browser-mockup__title">Noir Studio</h3>
+                <div class="browser-mockup__tags">
+                  <span class="browser-mockup__tag">Creative Agency</span>
+                  <span class="browser-mockup__tag">Scroll Video</span>
+                  <span class="browser-mockup__tag">Dark Theme</span>
                 </div>
-                <a href="#contact" class="btn-cta outline" style="white-space: nowrap;">Ask for Quote</a>
+                <span class="browser-mockup__link">
+                  Visit Live Site <span class="browser-mockup__link-arrow">→</span>
+                </span>
+              </div>
             </div>
+          </a>
         </div>
-    </section>
 
-    <!-- Footer / Start Project -->
-    <footer id="contact" class="contact">
-        <div class="container">
-            <h2>Ready to build your <span class="highlight">Legacy?</span></h2>
-            <p class="subtitle">Limited availability for 2026.</p>
-            <a href="mailto:luminadigital.my@gmail.com" class="btn-cta"
-                style="padding: 1rem 3rem; font-size: 1.2rem;">Get a
-                Quote</a>
+        <!-- Two Column Row: Savor & Artisan -->
+        <div class="showcase-row">
+          <div class="showcase-item" data-animate="slide-left">
+            <a href="./savor/" class="browser-mockup card-lift" data-cursor-text="Explore">
+              <div class="browser-mockup__header">
+                <div class="browser-mockup__dots">
+                  <span class="browser-mockup__dot browser-mockup__dot--red"></span>
+                  <span class="browser-mockup__dot browser-mockup__dot--yellow"></span>
+                  <span class="browser-mockup__dot browser-mockup__dot--green"></span>
+                </div>
+                <div class="browser-mockup__url">savor-dining.lumina.my</div>
+                <span class="live-badge">
+                  <span class="live-badge__dot"></span>
+                  Live
+                </span>
+              </div>
+              <div class="browser-mockup__content">
+                <img
+                  src="./savor/hero-image.jpg"
+                  alt="Savor Fine Dining Website"
+                  class="browser-mockup__image"
+                >
+                <div class="browser-mockup__overlay">
+                  <h3 class="browser-mockup__title">Savor Fine Dining</h3>
+                  <div class="browser-mockup__tags">
+                    <span class="browser-mockup__tag">Restaurant</span>
+                    <span class="browser-mockup__tag">Video Hero</span>
+                  </div>
+                  <span class="browser-mockup__link">
+                    Visit Live Site <span class="browser-mockup__link-arrow">→</span>
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
 
-            <div style="margin-top: 4rem; color: var(--color-text-muted); font-size: 0.8rem;">
-                &copy; 2025 Lumina Digital.
-            </div>
+          <div class="showcase-item" data-animate="slide-right">
+            <a href="./artisan/" class="browser-mockup card-lift" data-cursor-text="Explore">
+              <div class="browser-mockup__header">
+                <div class="browser-mockup__dots">
+                  <span class="browser-mockup__dot browser-mockup__dot--red"></span>
+                  <span class="browser-mockup__dot browser-mockup__dot--yellow"></span>
+                  <span class="browser-mockup__dot browser-mockup__dot--green"></span>
+                </div>
+                <div class="browser-mockup__url">artisan-collective.co</div>
+                <span class="live-badge">
+                  <span class="live-badge__dot"></span>
+                  Live
+                </span>
+              </div>
+              <div class="browser-mockup__content">
+                <img
+                  src="./artisan/images/vase-main.jpg"
+                  alt="Artisan Collective Website"
+                  class="browser-mockup__image"
+                >
+                <div class="browser-mockup__overlay">
+                  <h3 class="browser-mockup__title">Artisan Collective</h3>
+                  <div class="browser-mockup__tags">
+                    <span class="browser-mockup__tag">E-Commerce</span>
+                    <span class="browser-mockup__tag">Handcrafted</span>
+                  </div>
+                  <span class="browser-mockup__link">
+                    Visit Live Site <span class="browser-mockup__link-arrow">→</span>
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
         </div>
-    </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/601112032883?text=Hi%20Lumina%20Digital,%20I'm%20interested%20in%20a%20project."
-        class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
-            <path
-                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
-        </svg>
-    </a>
+        <!-- Another Row: Aurora & Meridian -->
+        <div class="showcase-row">
+          <div class="showcase-item" data-animate="slide-left">
+            <a href="./aurora/" class="browser-mockup card-lift" data-cursor-text="Explore">
+              <div class="browser-mockup__header">
+                <div class="browser-mockup__dots">
+                  <span class="browser-mockup__dot browser-mockup__dot--red"></span>
+                  <span class="browser-mockup__dot browser-mockup__dot--yellow"></span>
+                  <span class="browser-mockup__dot browser-mockup__dot--green"></span>
+                </div>
+                <div class="browser-mockup__url">aurora-wellness.my</div>
+                <span class="live-badge">
+                  <span class="live-badge__dot"></span>
+                  Live
+                </span>
+              </div>
+              <div class="browser-mockup__content">
+                <img
+                  src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=1000&q=90"
+                  alt="Aurora Wellness Website"
+                  class="browser-mockup__image"
+                >
+                <div class="browser-mockup__overlay">
+                  <h3 class="browser-mockup__title">Aurora Wellness</h3>
+                  <div class="browser-mockup__tags">
+                    <span class="browser-mockup__tag">Wellness</span>
+                    <span class="browser-mockup__tag">Booking System</span>
+                  </div>
+                  <span class="browser-mockup__link">
+                    Visit Live Site <span class="browser-mockup__link-arrow">→</span>
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="showcase-item" data-animate="slide-right">
+            <a href="./meridian/" class="browser-mockup card-lift" data-cursor-text="Explore">
+              <div class="browser-mockup__header">
+                <div class="browser-mockup__dots">
+                  <span class="browser-mockup__dot browser-mockup__dot--red"></span>
+                  <span class="browser-mockup__dot browser-mockup__dot--yellow"></span>
+                  <span class="browser-mockup__dot browser-mockup__dot--green"></span>
+                </div>
+                <div class="browser-mockup__url">meridian-properties.com</div>
+                <span class="live-badge">
+                  <span class="live-badge__dot"></span>
+                  Live
+                </span>
+              </div>
+              <div class="browser-mockup__content">
+                <img
+                  src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1000&q=90"
+                  alt="Meridian Properties Website"
+                  class="browser-mockup__image"
+                >
+                <div class="browser-mockup__overlay">
+                  <h3 class="browser-mockup__title">Meridian Properties</h3>
+                  <div class="browser-mockup__tags">
+                    <span class="browser-mockup__tag">Real Estate</span>
+                    <span class="browser-mockup__tag">Luxury</span>
+                  </div>
+                  <span class="browser-mockup__link">
+                    Visit Live Site <span class="browser-mockup__link-arrow">→</span>
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="section-services">
+    <div class="container">
+      <header class="section-header" data-animate="fade-up">
+        <span class="section-header__eyebrow">What We Do</span>
+        <h2 class="section-header__title">Crafted with intention</h2>
+        <p class="section-header__subtitle">
+          We offer end-to-end digital solutions for brands that refuse to blend in.
+        </p>
+      </header>
+
+      <div class="services-grid" data-animate="stagger">
+        <div class="service-card card card-glow" data-tilt data-tilt-max="8">
+          <div class="service-card__icon">01</div>
+          <h3 class="service-card__title">Brand Strategy</h3>
+          <p class="service-card__description">
+            Defining your digital identity through research, positioning, and strategic storytelling.
+          </p>
+        </div>
+
+        <div class="service-card card card-glow" data-tilt data-tilt-max="8">
+          <div class="service-card__icon">02</div>
+          <h3 class="service-card__title">Web Design</h3>
+          <p class="service-card__description">
+            Bespoke interfaces that captivate, convert, and create lasting impressions.
+          </p>
+        </div>
+
+        <div class="service-card card card-glow" data-tilt data-tilt-max="8">
+          <div class="service-card__icon">03</div>
+          <h3 class="service-card__title">Development</h3>
+          <p class="service-card__description">
+            Performant, accessible, and scalable code that brings designs to life.
+          </p>
+        </div>
+
+        <div class="service-card card card-glow" data-tilt data-tilt-max="8">
+          <div class="service-card__icon">04</div>
+          <h3 class="service-card__title">Motion Design</h3>
+          <p class="service-card__description">
+            Thoughtful animations that guide users and elevate the experience.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="section-stats">
+    <div class="container">
+      <div class="stats-grid" data-animate="stagger">
+        <div class="stat">
+          <span class="stat__number" data-counter="12" data-counter-suffix="+">0</span>
+          <span class="stat__label">Projects Delivered</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number" data-counter="98" data-counter-suffix="%">0</span>
+          <span class="stat__label">Client Satisfaction</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number" data-counter="3" data-counter-suffix=" Years">0</span>
+          <span class="stat__label">Industry Experience</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section-about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about__content" data-animate="slide-left">
+          <span class="section-header__eyebrow">About Lumina</span>
+          <h2 class="about__title">Design is our language.<br>Excellence is our standard.</h2>
+          <p class="about__text">
+            We're a boutique digital design studio based in Malaysia, dedicated to
+            creating exceptional digital experiences for brands that demand more than ordinary.
+          </p>
+          <p class="about__text">
+            Every project begins with understanding—your vision, your audience, your goals.
+            From there, we craft bespoke solutions that don't just look beautiful but perform
+            brilliantly.
+          </p>
+          <a href="#contact" class="btn btn--outline btn-border-draw link-brackets">
+            Work with us
+          </a>
+        </div>
+
+        <div class="about__image" data-animate="slide-right">
+          <div class="about__image-wrapper" data-parallax="0.2">
+            <img
+              src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80"
+              alt="Our Studio"
+              class="about__img"
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section-contact">
+    <div class="container container--narrow">
+      <header class="section-header" data-animate="fade-up">
+        <span class="section-header__eyebrow">Get in Touch</span>
+        <h2 class="section-header__title">Let's create something extraordinary</h2>
+        <p class="section-header__subtitle">
+          Have a project in mind? We'd love to hear about it.
+        </p>
+      </header>
+
+      <div class="contact-cta" data-animate="scale-up">
+        <div class="btn-magnetic" data-magnetic data-magnetic-strength="0.5">
+          <a href="mailto:luminadigital.my@gmail.com" class="contact-button" data-cursor-text="Email Us">
+            <span class="contact-button__text">luminadigital.my@gmail.com</span>
+            <span class="contact-button__arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <span class="footer__logo">LUMINA</span>
+          <p class="footer__tagline">Crafting digital legacies.</p>
+        </div>
+
+        <div class="footer__links">
+          <a href="#work" class="footer__link link-underline">Work</a>
+          <a href="#services" class="footer__link link-underline">Services</a>
+          <a href="#about" class="footer__link link-underline">About</a>
+          <a href="#contact" class="footer__link link-underline">Contact</a>
+        </div>
+
+        <div class="footer__copyright">
+          <p>© 2024 Lumina Digital. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="./src/js/main.js"></script>
 
 </body>
-
 </html>

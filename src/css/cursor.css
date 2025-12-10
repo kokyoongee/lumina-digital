@@ -1,0 +1,154 @@
+/* ============================================
+   CUSTOM CURSOR SYSTEM
+   ============================================ */
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+body.cursor-ready .cursor-dot,
+body.cursor-ready .cursor-ring {
+  opacity: 1;
+}
+
+/* Cursor Dot - Inner */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: calc(var(--z-cursor) + 1);
+  mix-blend-mode: difference;
+}
+
+/* Cursor Ring - Outer */
+.cursor-ring {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--color-accent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    width 0.4s var(--ease-out),
+    height 0.4s var(--ease-out),
+    background 0.3s ease,
+    border-color 0.3s ease,
+    border-radius 0.4s var(--ease-out);
+}
+
+/* Cursor Text (inside ring) */
+.cursor-text {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-bg);
+  opacity: 0;
+  transform: scale(0.8);
+  transition:
+    opacity 0.2s ease,
+    transform 0.3s var(--ease-out);
+  white-space: nowrap;
+}
+
+/* ---- Cursor States ---- */
+
+/* Default */
+.cursor-dot[data-state="default"],
+.cursor-ring[data-state="default"] {
+  /* Base styles already applied */
+}
+
+/* Hover - Links & Buttons */
+.cursor-ring[data-state="hover"] {
+  width: 80px;
+  height: 80px;
+  background: rgba(201, 169, 98, 0.1);
+  border-color: var(--color-accent);
+}
+
+.cursor-dot[data-state="hover"] {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+/* Text - Show label */
+.cursor-ring[data-state="text"] {
+  width: 100px;
+  height: 100px;
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.cursor-ring[data-state="text"] .cursor-text {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.cursor-dot[data-state="text"] {
+  opacity: 0;
+}
+
+/* Media - Corner brackets */
+.cursor-ring[data-state="media"] {
+  width: 64px;
+  height: 64px;
+  border: none;
+  border-radius: 0;
+  background:
+    /* Top Left */
+    linear-gradient(var(--color-accent), var(--color-accent)) 0 0 / 16px 1px no-repeat,
+    linear-gradient(var(--color-accent), var(--color-accent)) 0 0 / 1px 16px no-repeat,
+    /* Top Right */
+    linear-gradient(var(--color-accent), var(--color-accent)) 100% 0 / 16px 1px no-repeat,
+    linear-gradient(var(--color-accent), var(--color-accent)) 100% 0 / 1px 16px no-repeat,
+    /* Bottom Left */
+    linear-gradient(var(--color-accent), var(--color-accent)) 0 100% / 16px 1px no-repeat,
+    linear-gradient(var(--color-accent), var(--color-accent)) 0 100% / 1px 16px no-repeat,
+    /* Bottom Right */
+    linear-gradient(var(--color-accent), var(--color-accent)) 100% 100% / 16px 1px no-repeat,
+    linear-gradient(var(--color-accent), var(--color-accent)) 100% 100% / 1px 16px no-repeat;
+}
+
+/* Click - Pulse effect */
+.cursor-ring[data-state="click"] {
+  width: 32px;
+  height: 32px;
+  background: var(--color-accent);
+  transition: all 0.1s ease;
+}
+
+.cursor-dot[data-state="click"] {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+/* Hidden - Over video/3D */
+.cursor-dot[data-state="hidden"],
+.cursor-ring[data-state="hidden"] {
+  opacity: 0;
+}
+
+/* ---- Mobile: Hide custom cursor ---- */
+@media (hover: none) and (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+}
+
+/* ---- Reduced Motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  .cursor-ring {
+    transition: none;
+  }
+}

@@ -1,0 +1,430 @@
+/* ============================================
+   SCROLL ANIMATIONS & MICRO-INTERACTIONS
+   ============================================ */
+
+/* ---- Scroll Animation Base States ---- */
+
+/* Fade Up */
+[data-animate="fade-up"] {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+[data-animate="fade-up"].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+
+/* Fade In */
+[data-animate="fade-in"] {
+  opacity: 0;
+}
+
+[data-animate="fade-in"].is-visible {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+/* Scale Up */
+[data-animate="scale-up"] {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+[data-animate="scale-up"].is-visible {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+
+/* Slide In Left */
+[data-animate="slide-left"] {
+  opacity: 0;
+  transform: translateX(-60px);
+}
+
+[data-animate="slide-left"].is-visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+
+/* Slide In Right */
+[data-animate="slide-right"] {
+  opacity: 0;
+  transform: translateX(60px);
+}
+
+[data-animate="slide-right"].is-visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+
+/* Reveal (Clip Path) */
+[data-animate="reveal"] {
+  clip-path: inset(100% 0 0 0);
+}
+
+[data-animate="reveal"].is-visible {
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 1s var(--ease-out);
+}
+
+/* ---- Stagger Children ---- */
+[data-animate="stagger"] > * {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+[data-animate="stagger"].is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+}
+
+[data-animate="stagger"].is-visible > *:nth-child(1) { transition-delay: 0s; }
+[data-animate="stagger"].is-visible > *:nth-child(2) { transition-delay: 0.1s; }
+[data-animate="stagger"].is-visible > *:nth-child(3) { transition-delay: 0.2s; }
+[data-animate="stagger"].is-visible > *:nth-child(4) { transition-delay: 0.3s; }
+[data-animate="stagger"].is-visible > *:nth-child(5) { transition-delay: 0.4s; }
+[data-animate="stagger"].is-visible > *:nth-child(6) { transition-delay: 0.5s; }
+
+/* ---- Button Micro-Interactions ---- */
+
+/* Ripple Effect */
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ripple::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 10.01%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.8s;
+}
+
+.btn-ripple:active::after {
+  transform: scale(0);
+  opacity: 1;
+  transition: 0s;
+}
+
+/* Shine Sweep */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  transition: left 0.5s var(--ease-out);
+}
+
+.btn-shine:hover::before {
+  left: 100%;
+}
+
+/* Border Draw */
+.btn-border-draw {
+  position: relative;
+  background: transparent;
+  padding: var(--space-4) var(--space-8);
+}
+
+.btn-border-draw::before,
+.btn-border-draw::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 1px solid transparent;
+  transition: all 0.35s var(--ease-out);
+}
+
+.btn-border-draw::before {
+  top: 0;
+  left: 0;
+}
+
+.btn-border-draw::after {
+  bottom: 0;
+  right: 0;
+}
+
+.btn-border-draw:hover::before {
+  width: 100%;
+  height: 100%;
+  border-top-color: var(--color-accent);
+  border-right-color: var(--color-accent);
+}
+
+.btn-border-draw:hover::after {
+  width: 100%;
+  height: 100%;
+  border-bottom-color: var(--color-accent);
+  border-left-color: var(--color-accent);
+}
+
+/* Fill Slide */
+.btn-fill {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-fill::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-accent);
+  transform: translateX(-101%);
+  transition: transform 0.4s var(--ease-in-out);
+  z-index: -1;
+}
+
+.btn-fill:hover::before {
+  transform: translateX(0);
+}
+
+.btn-fill:hover {
+  color: var(--color-bg);
+}
+
+/* ---- Link Interactions ---- */
+
+/* Underline Grow */
+.link-grow {
+  position: relative;
+  display: inline-block;
+}
+
+.link-grow::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s var(--ease-out), left 0.3s var(--ease-out);
+}
+
+.link-grow:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Bracket Hover */
+.link-brackets::before,
+.link-brackets::after {
+  display: inline-block;
+  opacity: 0;
+  transition: transform 0.3s var(--ease-out), opacity 0.2s ease;
+}
+
+.link-brackets::before {
+  content: '[';
+  margin-right: 0.2em;
+  transform: translateX(10px);
+}
+
+.link-brackets::after {
+  content: ']';
+  margin-left: 0.2em;
+  transform: translateX(-10px);
+}
+
+.link-brackets:hover::before,
+.link-brackets:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Highlight Fill */
+.link-highlight {
+  background: linear-gradient(
+    to right,
+    var(--color-accent) 50%,
+    transparent 50%
+  );
+  background-size: 200% 100%;
+  background-position: right;
+  transition: background-position 0.4s var(--ease-in-out), color 0.4s ease;
+  padding: 0 4px;
+  margin: 0 -4px;
+}
+
+.link-highlight:hover {
+  background-position: left;
+  color: var(--color-bg);
+}
+
+/* ---- Card Interactions ---- */
+
+/* Card Lift */
+.card-lift {
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Card Glow Border */
+.card-glow {
+  position: relative;
+}
+
+.card-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(
+    135deg,
+    var(--color-accent) 0%,
+    transparent 50%,
+    var(--color-accent) 100%
+  );
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.card-glow:hover::before {
+  opacity: 1;
+}
+
+/* Card Content Reveal */
+.card-reveal {
+  overflow: hidden;
+}
+
+.card-reveal__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(13, 13, 13, 0.95) 0%,
+    rgba(13, 13, 13, 0.5) 50%,
+    transparent 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-6);
+  transform: translateY(40%);
+  transition: transform 0.5s var(--ease-out);
+}
+
+.card-reveal:hover .card-reveal__overlay {
+  transform: translateY(0);
+}
+
+.card-reveal__title {
+  transition: transform 0.4s var(--ease-out);
+}
+
+.card-reveal:hover .card-reveal__title {
+  transform: translateY(-8px);
+}
+
+.card-reveal__text {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.4s var(--ease-out);
+  transition-delay: 0.1s;
+}
+
+.card-reveal:hover .card-reveal__text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- 3D Tilt ---- */
+[data-tilt] {
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease;
+}
+
+.tilt-glare {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.tilt-glare-inner {
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.2),
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+[data-tilt]:hover .tilt-glare-inner {
+  opacity: 1;
+}
+
+/* ---- Loading States ---- */
+
+/* Skeleton */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-surface) 25%,
+    var(--color-bg-elevated) 50%,
+    var(--color-surface) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Spinner */
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--color-surface);
+  border-top-color: var(--color-accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
