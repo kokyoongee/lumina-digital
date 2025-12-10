@@ -191,16 +191,19 @@ export function initScrollProgress() {
   const progress = document.querySelector('.scroll-progress');
   if (!progress) return;
 
-  gsap.to(progress, {
-    scrollTrigger: {
-      trigger: document.body,
-      start: 'top top',
-      end: 'bottom bottom',
-      scrub: 0.3
-    },
-    scaleX: 1,
-    ease: 'none'
-  });
+  // Use vanilla JS scroll listener for better mobile compatibility
+  function updateProgress() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = scrollHeight > 0 ? scrollTop / scrollHeight : 0;
+    progress.style.transform = `scaleX(${scrollPercent})`;
+  }
+
+  // Update on scroll with passive listener for performance
+  window.addEventListener('scroll', updateProgress, { passive: true });
+
+  // Initial update
+  updateProgress();
 }
 
 // ============================================

@@ -58,7 +58,13 @@ function initMobileNav() {
 
   if (!toggle || !mobileMenu) return;
 
+  let scrollPosition = 0;
+
   function openMenu() {
+    // Save scroll position before locking
+    scrollPosition = window.pageYOffset;
+    document.body.style.top = `-${scrollPosition}px`;
+
     toggle.classList.add('is-active');
     toggle.setAttribute('aria-expanded', 'true');
     mobileMenu.classList.add('is-open');
@@ -70,6 +76,10 @@ function initMobileNav() {
     toggle.setAttribute('aria-expanded', 'false');
     mobileMenu.classList.remove('is-open');
     document.body.classList.remove('menu-open');
+
+    // Restore scroll position
+    document.body.style.top = '';
+    window.scrollTo(0, scrollPosition);
   }
 
   toggle.addEventListener('click', () => {
