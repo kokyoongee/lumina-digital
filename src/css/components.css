@@ -424,11 +424,6 @@
 /* Prevent body scroll when menu is open */
 body.menu-open {
   overflow: hidden;
-  touch-action: none;
-  position: fixed;
-  width: 100%;
-  left: 0;
-  right: 0;
 }
 
 /* Hide nav background when menu is open */
