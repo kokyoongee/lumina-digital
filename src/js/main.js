@@ -52,42 +52,35 @@ function initPreloader() {
 // MOBILE NAVIGATION
 // ============================================
 function initMobileNav() {
-  const toggle = document.querySelector('.nav__toggle');
-  const closeBtn = document.querySelector('.nav__close');
+  const toggle = document.querySelector('.nav__menu');
   const mobileMenu = document.querySelector('.nav__mobile-menu');
   const mobileLinks = document.querySelectorAll('.nav__mobile-link');
 
   if (!toggle || !mobileMenu) return;
 
-  let scrollPosition = 0;
-
   function openMenu() {
-    // Save scroll position before locking
-    scrollPosition = window.pageYOffset;
-    document.body.style.top = `-${scrollPosition}px`;
-
     toggle.classList.add('is-active');
+    toggle.setAttribute('aria-expanded', 'true');
     mobileMenu.classList.add('is-open');
     document.body.classList.add('menu-open');
   }
 
   function closeMenu() {
     toggle.classList.remove('is-active');
+    toggle.setAttribute('aria-expanded', 'false');
     mobileMenu.classList.remove('is-open');
     document.body.classList.remove('menu-open');
-
-    // Restore scroll position
-    document.body.style.top = '';
-    window.scrollTo(0, scrollPosition);
   }
 
-  // Open menu on hamburger click
-  toggle.addEventListener('click', openMenu);
-
-  // Close menu on X button click
-  if (closeBtn) {
-    closeBtn.addEventListener('click', closeMenu);
-  }
+  // Toggle menu on hamburger click
+  toggle.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.contains('is-open');
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
 
   // Close menu when clicking a link
   mobileLinks.forEach(link => {

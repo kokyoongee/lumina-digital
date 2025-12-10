@@ -292,76 +292,41 @@
 }
 
 /* ---- Mobile Navigation ---- */
-.nav__toggle {
+.nav__menu {
   display: none;
-  position: fixed !important;
-  top: 24px !important;
-  top: calc(24px + env(safe-area-inset-top, 0px)) !important;
-  right: 24px !important;
-  right: calc(24px + env(safe-area-inset-right, 0px)) !important;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 48px;
-  height: 48px;
-  background: transparent;
+  gap: 6px;
+  background: none;
   border: none;
   cursor: pointer;
-  z-index: 10000 !important;
+  padding: 8px;
   -webkit-tap-highlight-color: transparent;
 }
 
-.nav__toggle-line {
+.nav__menu span {
   display: block;
   width: 24px;
   height: 2px;
   background: var(--color-text);
-  border-radius: 2px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.nav__toggle-line:nth-child(1) {
-  transform: translateY(-6px);
-}
-
-.nav__toggle-line:nth-child(3) {
-  transform: translateY(6px);
-}
-
-/* Hide hamburger when menu is open */
-.nav__toggle.is-active {
-  display: none !important;
-}
-
-/* Close button inside menu */
-.nav__close {
-  position: absolute;
-  top: 24px;
-  top: calc(24px + env(safe-area-inset-top, 0px));
+/* Mobile Menu Toggle Active State - X transform */
+.nav__menu.is-active {
+  position: fixed;
+  top: 16px;
+  top: calc(16px + env(safe-area-inset-top, 0px));
   right: 24px;
   right: calc(24px + env(safe-area-inset-right, 0px));
-  width: 48px;
-  height: 48px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-  -webkit-tap-highlight-color: transparent;
+  z-index: 10000;
 }
 
-.nav__close svg {
-  width: 28px;
-  height: 28px;
-  color: var(--color-text);
-  transition: color 0.2s ease, transform 0.2s ease;
+.nav__menu.is-active span:first-child {
+  transform: translateY(4px) rotate(45deg);
 }
 
-.nav__close:hover svg {
-  color: var(--color-accent);
-  transform: scale(1.1);
+.nav__menu.is-active span:last-child {
+  transform: translateY(-4px) rotate(-45deg);
 }
 
 /* Mobile Menu Overlay */
@@ -404,7 +369,7 @@
 
 /* Mobile breakpoint */
 @media (max-width: 768px) {
-  .nav__toggle {
+  .nav__menu {
     display: flex;
   }
 
