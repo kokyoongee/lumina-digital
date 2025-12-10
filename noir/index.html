@@ -67,6 +67,10 @@
           <a href="#contact" class="btn btn--outline">Start a Project</a>
         </div>
       </div>
+      <div class="scroll-indicator">
+        <span>Scroll to explore</span>
+        <div class="scroll-indicator__line"></div>
+      </div>
     </div>
   </section>
 
@@ -107,10 +111,6 @@
         <span class="hero__stat-number">24</span>
         <span class="hero__stat-label">Design Awards</span>
       </div>
-    </div>
-    <div class="scroll-indicator">
-      <span>Scroll to explore</span>
-      <div class="scroll-indicator__line"></div>
     </div>
   </div>
 
@@ -595,7 +595,7 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <p class="footer__copyright">&copy; 2024 Noir Studio. All rights reserved.</p>
+        <p class="footer__copyright">&copy; <span id="current-year"></span> Noir Studio. All rights reserved.</p>
         <div class="footer__legal">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Service</a>
@@ -612,6 +612,9 @@
   </a>
 
   <script>
+    // Auto-update copyright year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
     // Mobile Navigation
     (function initMobileNav() {
       const toggle = document.querySelector('.nav__menu');

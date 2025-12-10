@@ -321,10 +321,15 @@ body.menu-open {
 
 /* Scroll Indicator */
 .scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 12px;
+  z-index: 10;
   transition: opacity 0.3s ease;
 }
 
@@ -491,19 +496,19 @@ body.menu-open {
 /* Hero Bottom Section (outside sticky) */
 .hero__bottom {
   background: var(--color-bg);
-  padding: 60px 40px;
+  padding: 30px 40px;
   position: relative;
   z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 24px;
 }
 
 /* Hero Stats */
 .hero__stats {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 48px;
   max-width: var(--container-width);
   width: 100%;
@@ -1322,16 +1327,12 @@ a.contact__detail-value:hover {
     padding: 120px 24px 80px;
   }
 
-  .hero__stats {
-    justify-content: flex-start;
-  }
-
-  .hero__stat {
-    text-align: left;
-  }
-
   .hero__bottom {
     padding: 40px 24px;
+  }
+
+  .scroll-indicator {
+    bottom: 24px;
   }
 
   .section-header--split {
@@ -1467,16 +1468,13 @@ a.contact__detail-value:hover {
   }
 
   .hero__stats {
+    justify-content: flex-end;
     flex-wrap: wrap;
-    gap: 16px;
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.1s ease-out, transform 0.1s ease-out;
+    gap: 24px;
   }
 
-  .hero__stats.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+  .hero__stat {
+    text-align: right;
   }
 
   .hero__stat-number {
@@ -1487,13 +1485,23 @@ a.contact__detail-value:hover {
     font-size: 0.65rem;
   }
 
-  .hero__visual {
-    display: none;
-  }
-
   .hero__bottom {
     padding: 30px 20px;
     gap: 24px;
+  }
+
+  .hero__marquee-track {
+    font-size: 0.9rem;
+    gap: 24px;
+  }
+
+  .hero__marquee-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scroll-indicator {
+    bottom: 16px;
   }
 
   .scroll-indicator span {
@@ -1536,6 +1544,10 @@ a.contact__detail-value:hover {
 
   .hero__stat-label {
     font-size: 0.7rem;
+  }
+
+  .scroll-indicator {
+    bottom: 20px;
   }
 
   .scroll-indicator__line {
