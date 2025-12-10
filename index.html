@@ -515,7 +515,7 @@
         </div>
 
         <div class="footer__copyright">
-          <p>© 2024 Lumina Digital. All rights reserved.</p>
+          <p>© <span id="current-year"></span> Lumina Digital. All rights reserved.</p>
         </div>
       </div>
     </div>
@@ -523,6 +523,7 @@
 
   <!-- Scripts -->
   <script type="module" src="./src/js/main.js"></script>
+  <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
 
 </body>
 </html>

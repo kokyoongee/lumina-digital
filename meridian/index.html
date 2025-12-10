@@ -634,7 +634,7 @@
       </div>
 
       <div class="footer__bottom">
-        <p>© 2024 Meridian Properties. All rights reserved.</p>
+        <p>© <span id="current-year"></span> Meridian Properties. All rights reserved.</p>
         <div class="footer__legal">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Service</a>
@@ -647,6 +647,8 @@
   <a href="../" class="back-link">
     ← Back to Lumina
   </a>
+
+  <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
 
 </body>
 </html>
