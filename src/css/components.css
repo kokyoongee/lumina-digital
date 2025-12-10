@@ -386,10 +386,6 @@
   .nav .btn-magnetic {
     display: none;
   }
-
-  .nav__inner {
-    padding: 0;
-  }
 }
 
 /* Prevent body scroll when menu is open */

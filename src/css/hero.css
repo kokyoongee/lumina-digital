@@ -194,8 +194,15 @@
     padding: var(--space-20) var(--container-padding);
   }
 
+  .hero__content {
+    max-width: 100%;
+    width: 100%;
+  }
+
   .hero__title {
     font-size: var(--text-3xl);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   .hero__subtitle {
