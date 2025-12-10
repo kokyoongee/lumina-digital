@@ -40,6 +40,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -47,7 +48,6 @@ body {
   background: var(--color-bg);
   color: var(--color-text);
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
 .container {
@@ -1216,6 +1216,18 @@ a.contact__detail-value:hover {
 
 /* Responsive Design */
 @media (max-width: 1200px) {
+  .nav {
+    padding: 20px 24px;
+  }
+
+  .nav__links {
+    gap: 24px;
+  }
+
+  .nav__link--cta {
+    padding: 10px 18px;
+  }
+
   .services__grid {
     grid-template-columns: repeat(2, 1fr);
   }
