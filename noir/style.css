@@ -73,6 +73,7 @@ img {
   top: 0;
   left: 0;
   right: 0;
+  width: 100%;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -82,6 +83,7 @@ img {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   overflow: visible;
+  box-sizing: border-box;
 }
 
 .nav__logo {
@@ -255,11 +257,12 @@ body.menu-open {
   position: sticky;
   top: 0;
   height: 100vh;
+  min-height: 600px; /* Minimum height to prevent content cutoff */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 120px 40px 40px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* Hero Video Background */
@@ -1407,5 +1410,51 @@ a.contact__detail-value:hover {
 
   .scroll-indicator {
     bottom: 24px;
+  }
+}
+
+/* Short viewport (wide screens with low height) */
+@media (max-height: 700px) and (min-width: 969px) {
+  .hero-sticky {
+    padding: 80px 40px 30px;
+  }
+
+  .hero__title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin-bottom: 16px;
+  }
+
+  .hero__label {
+    margin-bottom: 16px;
+    padding: 6px 12px;
+  }
+
+  .hero__description {
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+
+  .hero__stats {
+    gap: 32px;
+  }
+
+  .hero__stat-number {
+    font-size: 2rem;
+  }
+
+  .hero__stat-label {
+    font-size: 0.7rem;
+  }
+
+  .scroll-indicator {
+    bottom: 20px;
+  }
+
+  .scroll-indicator__line {
+    height: 40px;
+  }
+
+  .hero__visual {
+    display: none;
   }
 }
