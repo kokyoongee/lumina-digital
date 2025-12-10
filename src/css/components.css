@@ -302,7 +302,8 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  z-index: calc(var(--z-overlay) + 1);
+  position: relative;
+  z-index: calc(var(--z-sticky) + 20);
 }
 
 .nav__toggle-line {
@@ -339,10 +340,14 @@
 .nav__mobile-menu {
   display: none;
   position: fixed;
-  inset: 0;
-  background: rgba(13, 13, 13, 0.98);
-  backdrop-filter: blur(20px);
-  z-index: var(--z-overlay);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #0d0d0d;
+  z-index: calc(var(--z-sticky) + 10);
   flex-direction: column;
   justify-content: center;
   align-items: center;
