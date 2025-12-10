@@ -168,6 +168,64 @@
   .showcase-row {
     grid-template-columns: 1fr;
   }
+
+  .showcase-item--featured .browser-mockup__content {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (max-width: 640px) {
+  .showcase-grid {
+    gap: var(--space-6);
+  }
+
+  .showcase-row {
+    gap: var(--space-6);
+  }
+
+  /* Show overlay on mobile (no hover) */
+  .browser-mockup__overlay {
+    opacity: 1;
+    background: linear-gradient(
+      to top,
+      rgba(13, 13, 13, 0.95) 0%,
+      rgba(13, 13, 13, 0.5) 40%,
+      transparent 70%
+    );
+  }
+
+  .browser-mockup__title {
+    font-size: var(--text-lg);
+  }
+
+  .browser-mockup__tags {
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    margin-bottom: var(--space-2);
+  }
+
+  .browser-mockup__overlay {
+    padding: var(--space-4);
+  }
+
+  .browser-mockup__header {
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .browser-mockup__dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .browser-mockup__url {
+    font-size: 0.65rem;
+    padding: var(--space-1) var(--space-2);
+  }
+
+  .live-badge {
+    font-size: 0.65rem;
+    padding: 2px var(--space-2);
+  }
 }
 
 /* ---- Device Mockup (Phone) ---- */

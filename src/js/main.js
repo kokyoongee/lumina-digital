@@ -49,6 +49,61 @@ function initPreloader() {
 }
 
 // ============================================
+// MOBILE NAVIGATION
+// ============================================
+function initMobileNav() {
+  const toggle = document.querySelector('.nav__toggle');
+  const mobileMenu = document.querySelector('.nav__mobile-menu');
+  const mobileLinks = document.querySelectorAll('.nav__mobile-link');
+
+  if (!toggle || !mobileMenu) return;
+
+  function openMenu() {
+    toggle.classList.add('is-active');
+    toggle.setAttribute('aria-expanded', 'true');
+    mobileMenu.classList.add('is-open');
+    document.body.classList.add('menu-open');
+  }
+
+  function closeMenu() {
+    toggle.classList.remove('is-active');
+    toggle.setAttribute('aria-expanded', 'false');
+    mobileMenu.classList.remove('is-open');
+    document.body.classList.remove('menu-open');
+  }
+
+  toggle.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.contains('is-open');
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  // Close menu when clicking a link
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
+
+  // Close menu on escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) {
+      closeMenu();
+    }
+  });
+
+  // Close menu on resize to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && mobileMenu.classList.contains('is-open')) {
+      closeMenu();
+    }
+  });
+}
+
+// ============================================
 // INITIALIZE ALL MODULES
 // ============================================
 function init() {
@@ -63,6 +118,7 @@ function init() {
   // Navigation & scroll
   initSmoothScroll();
   initPreloader();
+  initMobileNav();
 
   // Refresh cursor bindings after dynamic content
   cursor.refresh();

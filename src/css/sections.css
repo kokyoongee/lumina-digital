@@ -10,8 +10,14 @@
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
   gap: var(--space-8);
+}
+
+@media (max-width: 400px) {
+  .projects-grid {
+    gap: var(--space-6);
+  }
 }
 
 .project-card {
@@ -134,6 +140,16 @@
   justify-content: center;
   gap: var(--space-16);
   flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .stats-grid {
+    gap: var(--space-8) var(--space-12);
+  }
+
+  .stat__number {
+    font-size: var(--text-4xl);
+  }
 }
 
 .stat {

@@ -290,3 +290,109 @@
   transform: scaleX(0);
   z-index: calc(var(--z-sticky) + 1);
 }
+
+/* ---- Mobile Navigation ---- */
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: calc(var(--z-overlay) + 1);
+}
+
+.nav__toggle-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav__toggle-line:nth-child(1) {
+  transform: translateY(-6px);
+}
+
+.nav__toggle-line:nth-child(3) {
+  transform: translateY(6px);
+}
+
+/* Toggle active state */
+.nav__toggle.is-active .nav__toggle-line:nth-child(1) {
+  transform: translateY(0) rotate(45deg);
+}
+
+.nav__toggle.is-active .nav__toggle-line:nth-child(2) {
+  opacity: 0;
+}
+
+.nav__toggle.is-active .nav__toggle-line:nth-child(3) {
+  transform: translateY(0) rotate(-45deg);
+}
+
+/* Mobile Menu Overlay */
+.nav__mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 13, 13, 0.98);
+  backdrop-filter: blur(20px);
+  z-index: var(--z-overlay);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-8);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.nav__mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav__mobile-link {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-medium);
+  color: var(--color-text);
+  transition: color 0.3s ease;
+}
+
+.nav__mobile-link:hover {
+  color: var(--color-accent);
+}
+
+/* Mobile breakpoint */
+@media (max-width: 768px) {
+  .nav__toggle {
+    display: flex;
+  }
+
+  .nav__links {
+    display: none;
+  }
+
+  .nav__mobile-menu {
+    display: flex;
+  }
+
+  .nav .btn-magnetic {
+    display: none;
+  }
+
+  .nav__inner {
+    padding: 0;
+  }
+}
+
+/* Prevent body scroll when menu is open */
+body.menu-open {
+  overflow: hidden;
+}
