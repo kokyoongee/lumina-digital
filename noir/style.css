@@ -1453,8 +1453,4 @@ a.contact__detail-value:hover {
   .scroll-indicator__line {
     height: 40px;
   }
-
-  .hero__visual {
-    display: none;
-  }
 }
