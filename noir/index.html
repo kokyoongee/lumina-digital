@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noir Studio | Creative Agency</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__container">
+      <a href="#" class="nav__logo">
+        <span class="nav__logo-text">NOIR</span>
+        <span class="nav__logo-sub">STUDIO</span>
+      </a>
+      <div class="nav__links">
+        <a href="#work" class="nav__link">Work</a>
+        <a href="#services" class="nav__link">Services</a>
+        <a href="#about" class="nav__link">About</a>
+        <a href="#contact" class="nav__link nav__link--cta">Let's Talk</a>
+      </div>
+      <button class="nav__menu" aria-label="Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="nav__mobile-menu">
+      <a href="#work" class="nav__mobile-link">Work</a>
+      <a href="#services" class="nav__mobile-link">Services</a>
+      <a href="#about" class="nav__mobile-link">About</a>
+      <a href="#contact" class="nav__mobile-link">Let's Talk</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Scroll-Scrub Video -->
+  <section class="hero-scroll-container">
+    <div class="hero-sticky">
+      <div class="hero__video-wrapper">
+        <video class="hero__video" muted playsinline preload="auto">
+          <source src="hero-video-optimized.mp4" type="video/mp4">
+        </video>
+        <div class="hero__video-overlay"></div>
+      </div>
+      <div class="hero__content">
+        <div class="hero__label">Creative Agency</div>
+        <h1 class="hero__title">
+          <span class="hero__title-line">We create</span>
+          <span class="hero__title-line hero__title-line--stroke">bold brands</span>
+          <span class="hero__title-line">that stand out</span>
+        </h1>
+        <p class="hero__description">
+          Award-winning design studio crafting distinctive brand identities,
+          digital experiences, and creative campaigns for forward-thinking companies.
+        </p>
+        <div class="hero__actions">
+          <a href="#work" class="btn btn--primary">View Our Work</a>
+          <a href="#contact" class="btn btn--outline">Start a Project</a>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span>Scroll to explore</span>
+        <div class="scroll-indicator__line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero Bottom Elements (outside sticky for better positioning) -->
+  <div class="hero__bottom">
+    <div class="hero__visual">
+      <div class="hero__marquee">
+        <div class="hero__marquee-track">
+          <span>Branding</span>
+          <span class="hero__marquee-dot"></span>
+          <span>Digital Design</span>
+          <span class="hero__marquee-dot"></span>
+          <span>Motion Graphics</span>
+          <span class="hero__marquee-dot"></span>
+          <span>Art Direction</span>
+          <span class="hero__marquee-dot"></span>
+          <span>Branding</span>
+          <span class="hero__marquee-dot"></span>
+          <span>Digital Design</span>
+          <span class="hero__marquee-dot"></span>
+          <span>Motion Graphics</span>
+          <span class="hero__marquee-dot"></span>
+          <span>Art Direction</span>
+          <span class="hero__marquee-dot"></span>
+        </div>
+      </div>
+    </div>
+    <div class="hero__stats">
+      <div class="hero__stat">
+        <span class="hero__stat-number">150+</span>
+        <span class="hero__stat-label">Projects Delivered</span>
+      </div>
+      <div class="hero__stat">
+        <span class="hero__stat-number">12</span>
+        <span class="hero__stat-label">Years Experience</span>
+      </div>
+      <div class="hero__stat">
+        <span class="hero__stat-number">24</span>
+        <span class="hero__stat-label">Design Awards</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Work Section -->
+  <section id="work" class="work">
+    <div class="container">
+      <div class="section-header section-header--split">
+        <div class="section-header__left">
+          <span class="section-label">Selected Work</span>
+          <h2 class="section-title">Featured<br>Projects</h2>
+        </div>
+        <div class="section-header__right">
+          <p class="section-description">A curated selection of our most impactful work across branding, digital, and
+            motion design.</p>
+          <a href="#" class="link-arrow">View All Projects <span>→</span></a>
+        </div>
+      </div>
+
+      <div class="work__grid">
+        <!-- Project 1 - Large -->
+        <article class="work__item work__item--large">
+          <a href="#" class="work__link">
+            <div class="work__image-wrapper">
+              <img src="vertex-tech.jpeg" alt="Vertex Brand Identity" class="work__image">
+              <div class="work__overlay">
+                <span class="work__view">View Project</span>
+              </div>
+            </div>
+            <div class="work__info">
+              <span class="work__category">Brand Identity</span>
+              <h3 class="work__title">Vertex Tech</h3>
+              <p class="work__excerpt">Complete rebrand for a leading fintech startup</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="work__item">
+          <a href="#" class="work__link">
+            <div class="work__image-wrapper">
+              <img src="echo-magazine.jpeg" alt="Echo Magazine" class="work__image">
+              <div class="work__overlay">
+                <span class="work__view">View Project</span>
+              </div>
+            </div>
+            <div class="work__info">
+              <span class="work__category">Editorial Design</span>
+              <h3 class="work__title">Echo Magazine</h3>
+              <p class="work__excerpt">Art direction and layout design</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Project 3 - Video Large -->
+        <article class="work__item work__item--large work__item--video">
+          <a href="#" class="work__link">
+            <div class="work__image-wrapper">
+              <video class="work__video" muted loop playsinline preload="metadata" poster="neon-dreams-thumb.jpg">
+                <source src="neon-dreams.mp4" type="video/mp4">
+              </video>
+              <div class="work__overlay">
+                <span class="work__view">View Project</span>
+              </div>
+            </div>
+            <div class="work__info">
+              <span class="work__category">Motion Design</span>
+              <h3 class="work__title">Neon Dreams</h3>
+              <p class="work__excerpt">Animated campaign for music festival</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="work__item">
+          <a href="#" class="work__link">
+            <div class="work__image-wrapper">
+              <img src="prism-gallery.png" alt="Prism Gallery" class="work__image">
+              <div class="work__overlay">
+                <span class="work__view">View Project</span>
+              </div>
+            </div>
+            <div class="work__info">
+              <span class="work__category">Web Design</span>
+              <h3 class="work__title">Prism Gallery</h3>
+              <p class="work__excerpt">Immersive digital experience for art gallery</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="work__item">
+          <a href="#" class="work__link">
+            <div class="work__image-wrapper">
+              <img src="lunar-coffee.jpeg" alt="Lunar Coffee" class="work__image">
+              <div class="work__overlay">
+                <span class="work__view">View Project</span>
+              </div>
+            </div>
+            <div class="work__info">
+              <span class="work__category">Packaging</span>
+              <h3 class="work__title">Lunar Coffee</h3>
+              <p class="work__excerpt">Premium coffee packaging design</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Project 6 -->
+        <article class="work__item">
+          <a href="#" class="work__link">
+            <div class="work__image-wrapper">
+              <img src="flux-app.jpeg" alt="Flux App" class="work__image">
+              <div class="work__overlay">
+                <span class="work__view">View Project</span>
+              </div>
+            </div>
+            <div class="work__info">
+              <span class="work__category">UI/UX Design</span>
+              <h3 class="work__title">Flux App</h3>
+              <p class="work__excerpt">Mobile app design for productivity</p>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <span class="section-label">What We Do</span>
+        <h2 class="section-title">Our<br>Expertise</h2>
+      </div>
+
+      <div class="services__grid">
+        <article class="service">
+          <span class="service__number">01</span>
+          <div class="service__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+          </div>
+          <h3 class="service__title">Brand Identity</h3>
+          <p class="service__description">Strategic brand development from logo design to comprehensive visual systems
+            that define your market presence.</p>
+          <ul class="service__list">
+            <li>Logo Design</li>
+            <li>Visual Identity</li>
+            <li>Brand Guidelines</li>
+            <li>Brand Strategy</li>
+          </ul>
+        </article>
+
+        <article class="service">
+          <span class="service__number">02</span>
+          <div class="service__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <path d="M8 21h8M12 17v4" />
+            </svg>
+          </div>
+          <h3 class="service__title">Digital Design</h3>
+          <p class="service__description">Crafting exceptional digital experiences that engage users and drive results
+            across all platforms.</p>
+          <ul class="service__list">
+            <li>Web Design</li>
+            <li>UI/UX Design</li>
+            <li>Mobile Apps</li>
+            <li>Interactive Experiences</li>
+          </ul>
+        </article>
+
+        <article class="service">
+          <span class="service__number">03</span>
+          <div class="service__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polygon points="23 7 16 12 23 17 23 7" />
+              <rect x="1" y="5" width="15" height="14" rx="2" />
+            </svg>
+          </div>
+          <h3 class="service__title">Motion Design</h3>
+          <p class="service__description">Dynamic motion graphics and animations that bring brands to life and captivate
+            audiences.</p>
+          <ul class="service__list">
+            <li>Animation</li>
+            <li>Video Production</li>
+            <li>Social Content</li>
+            <li>Brand Films</li>
+          </ul>
+        </article>
+
+        <article class="service">
+          <span class="service__number">04</span>
+          <div class="service__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path
+                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+            </svg>
+          </div>
+          <h3 class="service__title">Art Direction</h3>
+          <p class="service__description">Creative direction and conceptual development for campaigns that make lasting
+            impressions.</p>
+          <ul class="service__list">
+            <li>Campaign Concepts</li>
+            <li>Photo Direction</li>
+            <li>Creative Strategy</li>
+            <li>Visual Storytelling</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="process">
+    <div class="container">
+      <div class="process__content">
+        <div class="process__header">
+          <span class="section-label">Our Process</span>
+          <h2 class="section-title">How We<br>Work</h2>
+        </div>
+        <div class="process__steps">
+          <div class="process__step">
+            <div class="process__step-number">01</div>
+            <div class="process__step-content">
+              <h3 class="process__step-title">Discovery</h3>
+              <p class="process__step-text">We dive deep into understanding your brand, audience, and objectives through
+                collaborative workshops and research.</p>
+            </div>
+          </div>
+          <div class="process__step">
+            <div class="process__step-number">02</div>
+            <div class="process__step-content">
+              <h3 class="process__step-title">Concept</h3>
+              <p class="process__step-text">We develop creative concepts and strategic directions that align with your
+                vision and resonate with your audience.</p>
+            </div>
+          </div>
+          <div class="process__step">
+            <div class="process__step-number">03</div>
+            <div class="process__step-content">
+              <h3 class="process__step-title">Design</h3>
+              <p class="process__step-text">We craft every detail with precision, creating designs that are both
+                beautiful and purposeful.</p>
+            </div>
+          </div>
+          <div class="process__step">
+            <div class="process__step-number">04</div>
+            <div class="process__step-content">
+              <h3 class="process__step-title">Deliver</h3>
+              <p class="process__step-text">We finalize and deliver all assets, ensuring seamless implementation across
+                all touchpoints.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="about" class="team">
+    <div class="container">
+      <div class="section-header section-header--split">
+        <div class="section-header__left">
+          <span class="section-label">The Team</span>
+          <h2 class="section-title">Meet the<br>Creatives</h2>
+        </div>
+        <div class="section-header__right">
+          <p class="section-description">A collective of designers, strategists, and storytellers united by our passion
+            for exceptional design.</p>
+        </div>
+      </div>
+
+      <div class="team__grid">
+        <article class="team__member">
+          <div class="team__member-image">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=90" alt="Marcus Chen">
+            <div class="team__member-overlay">
+              <div class="team__member-social">
+                <a href="#" aria-label="LinkedIn">in</a>
+                <a href="#" aria-label="Twitter">tw</a>
+              </div>
+            </div>
+          </div>
+          <h3 class="team__member-name">Marcus Chen</h3>
+          <span class="team__member-role">Creative Director</span>
+        </article>
+
+        <article class="team__member">
+          <div class="team__member-image">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=90" alt="Sarah Kim">
+            <div class="team__member-overlay">
+              <div class="team__member-social">
+                <a href="#" aria-label="LinkedIn">in</a>
+                <a href="#" aria-label="Dribbble">dr</a>
+              </div>
+            </div>
+          </div>
+          <h3 class="team__member-name">Sarah Kim</h3>
+          <span class="team__member-role">Design Lead</span>
+        </article>
+
+        <article class="team__member">
+          <div class="team__member-image">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=90" alt="David Okonkwo">
+            <div class="team__member-overlay">
+              <div class="team__member-social">
+                <a href="#" aria-label="LinkedIn">in</a>
+                <a href="#" aria-label="Behance">be</a>
+              </div>
+            </div>
+          </div>
+          <h3 class="team__member-name">David Okonkwo</h3>
+          <span class="team__member-role">Motion Director</span>
+        </article>
+
+        <article class="team__member">
+          <div class="team__member-image">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=90" alt="Emma Torres">
+            <div class="team__member-overlay">
+              <div class="team__member-social">
+                <a href="#" aria-label="LinkedIn">in</a>
+                <a href="#" aria-label="Twitter">tw</a>
+              </div>
+            </div>
+          </div>
+          <h3 class="team__member-name">Emma Torres</h3>
+          <span class="team__member-role">Strategy Director</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients Section -->
+  <section class="clients">
+    <div class="container">
+      <div class="clients__header">
+        <span class="section-label">Trusted By</span>
+      </div>
+      <div class="clients__logos">
+        <div class="clients__logo">Spotify</div>
+        <div class="clients__logo">Nike</div>
+        <div class="clients__logo">Airbnb</div>
+        <div class="clients__logo">Google</div>
+        <div class="clients__logo">Netflix</div>
+        <div class="clients__logo">Apple</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial Section -->
+  <section class="testimonial">
+    <div class="container">
+      <div class="testimonial__content">
+        <svg class="testimonial__quote" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M6 17h3l2-4V7H5v6h3l-2 4zm8 0h3l2-4V7h-6v6h3l-2 4z" />
+        </svg>
+        <blockquote class="testimonial__text">
+          "Noir Studio transformed our brand from forgettable to iconic. Their creative vision and strategic thinking
+          delivered results that exceeded every expectation. They're not just designers—they're partners in building
+          something extraordinary."
+        </blockquote>
+        <div class="testimonial__author">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&q=90" alt="James Morrison"
+            class="testimonial__author-image">
+          <div class="testimonial__author-info">
+            <span class="testimonial__author-name">James Morrison</span>
+            <span class="testimonial__author-title">CEO, Vertex Technologies</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="contact__grid">
+        <div class="contact__info">
+          <span class="section-label">Get in Touch</span>
+          <h2 class="section-title">Let's Create<br>Something Bold</h2>
+          <p class="contact__description">Have a project in mind? We'd love to hear about it. Let's discuss how we can
+            bring your vision to life.</p>
+
+          <div class="contact__details">
+            <div class="contact__detail">
+              <span class="contact__detail-label">Email</span>
+              <a href="mailto:hello@noirstudio.co" class="contact__detail-value">hello@noirstudio.co</a>
+            </div>
+            <div class="contact__detail">
+              <span class="contact__detail-label">Phone</span>
+              <a href="tel:+60321234567" class="contact__detail-value">+60 3 2123 4567</a>
+            </div>
+            <div class="contact__detail">
+              <span class="contact__detail-label">Location</span>
+              <span class="contact__detail-value">Kuala Lumpur, Malaysia</span>
+            </div>
+          </div>
+
+          <div class="contact__social">
+            <a href="#" class="contact__social-link">Instagram</a>
+            <a href="#" class="contact__social-link">Behance</a>
+            <a href="#" class="contact__social-link">Dribbble</a>
+            <a href="#" class="contact__social-link">LinkedIn</a>
+          </div>
+        </div>
+
+        <form class="contact__form">
+          <div class="form-group">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" class="form-input" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" class="form-input" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="service" class="form-label">Service</label>
+            <select id="service" class="form-select" required>
+              <option value="">Select a service</option>
+              <option value="branding">Brand Identity</option>
+              <option value="digital">Digital Design</option>
+              <option value="motion">Motion Design</option>
+              <option value="direction">Art Direction</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="budget" class="form-label">Budget Range</label>
+            <select id="budget" class="form-select">
+              <option value="">Select budget range</option>
+              <option value="10k-25k">RM 10,000 - RM 25,000</option>
+              <option value="25k-50k">RM 25,000 - RM 50,000</option>
+              <option value="50k-100k">RM 50,000 - RM 100,000</option>
+              <option value="100k+">RM 100,000+</option>
+            </select>
+          </div>
+          <div class="form-group form-group--full">
+            <label for="message" class="form-label">Tell us about your project</label>
+            <textarea id="message" class="form-textarea" rows="4"
+              placeholder="Describe your project, goals, and timeline..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <a href="#" class="footer__logo">
+            <span class="footer__logo-text">NOIR</span>
+            <span class="footer__logo-sub">STUDIO</span>
+          </a>
+          <p class="footer__tagline">Creating bold brands since 2012</p>
+        </div>
+        <div class="footer__nav">
+          <div class="footer__col">
+            <h4 class="footer__heading">Navigation</h4>
+            <a href="#work" class="footer__link">Work</a>
+            <a href="#services" class="footer__link">Services</a>
+            <a href="#about" class="footer__link">About</a>
+            <a href="#contact" class="footer__link">Contact</a>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__heading">Services</h4>
+            <a href="#" class="footer__link">Branding</a>
+            <a href="#" class="footer__link">Digital Design</a>
+            <a href="#" class="footer__link">Motion</a>
+            <a href="#" class="footer__link">Art Direction</a>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__heading">Connect</h4>
+            <a href="#" class="footer__link">Instagram</a>
+            <a href="#" class="footer__link">Behance</a>
+            <a href="#" class="footer__link">Dribbble</a>
+            <a href="#" class="footer__link">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; <span id="current-year"></span> Noir Studio. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="/" class="back-to-lumina">
+    <span>Back to Lumina</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M19 12H5M12 19l-7-7 7-7" />
+    </svg>
+  </a>
+
+  <script>
+    // Auto-update copyright year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Mobile Navigation
+    (function initMobileNav() {
+      const toggle = document.querySelector('.nav__menu');
+      const mobileMenu = document.querySelector('.nav__mobile-menu');
+      const mobileLinks = document.querySelectorAll('.nav__mobile-link');
+
+      if (!toggle || !mobileMenu) return;
+
+      function openMenu() {
+        toggle.classList.add('is-active');
+        toggle.setAttribute('aria-expanded', 'true');
+        mobileMenu.classList.add('is-open');
+        document.body.classList.add('menu-open');
+      }
+
+      function closeMenu() {
+        toggle.classList.remove('is-active');
+        toggle.setAttribute('aria-expanded', 'false');
+        mobileMenu.classList.remove('is-open');
+        document.body.classList.remove('menu-open');
+      }
+
+      toggle.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.contains('is-open');
+        if (isOpen) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      // Close menu when clicking a link
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          closeMenu();
+        });
+      });
+
+      // Close menu on escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) {
+          closeMenu();
+        }
+      });
+
+      // Close menu on resize to desktop
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 968 && mobileMenu.classList.contains('is-open')) {
+          closeMenu();
+        }
+      });
+    })();
+
+    // Scroll-scrub video controller with text reveal
+    document.addEventListener('DOMContentLoaded', () => {
+      const video = document.querySelector('.hero__video');
+      const scrollContainer = document.querySelector('.hero-scroll-container');
+      const scrollIndicator = document.querySelector('.scroll-indicator');
+      const heroContent = document.querySelector('.hero__content');
+      const heroStats = document.querySelector('.hero__stats');
+
+      if (!video || !scrollContainer) return;
+
+      let videoReady = false;
+      let videoDuration = 0;
+      let lastProgress = -1;
+
+      const getIsMobile = () => window.innerWidth <= 640;
+
+      // Wait for video metadata to load
+      video.addEventListener('loadedmetadata', () => {
+        videoDuration = video.duration;
+        videoReady = true;
+        video.currentTime = 0;
+      });
+
+      // Fallback: try to load video
+      video.load();
+
+      // Throttled scroll handler
+      let ticking = false;
+
+      const updateVideoTime = () => {
+        if (!videoReady || videoDuration === 0) {
+          ticking = false;
+          return;
+        }
+
+        const rect = scrollContainer.getBoundingClientRect();
+        const scrollHeight = scrollContainer.offsetHeight - window.innerHeight;
+        const scrolled = -rect.top;
+
+        // Calculate progress (0 to 1)
+        let progress = scrolled / scrollHeight;
+        progress = Math.max(0, Math.min(1, progress));
+
+        // Only update if progress changed significantly (reduces seeking)
+        if (Math.abs(progress - lastProgress) > 0.005) {
+          lastProgress = progress;
+
+          // Set video time
+          video.currentTime = progress * videoDuration;
+
+          // Fade out scroll indicator
+          if (scrollIndicator) {
+            scrollIndicator.style.opacity = Math.max(0, 1 - (progress * 4));
+          }
+
+          // Mobile text reveal animation
+          if (getIsMobile()) {
+            // Logic: Default is visible. Only animate OUT if we want to effect.
+            // But the original design wanted it to FADE IN.
+            // If we start at top (progress 0), we want it VISIBLE.
+            // Let's keep it simple: Ensure it's fully visible at top.
+
+            // If we want a parallax effect, we can translate it, but let's avoid opacity: 0 at the start.
+            // Actually, the user COMPLAINED about it disappearing. 
+            // Let's remove the aggressive opacity manipulation for now and just stick to the transform parallax
+            // OR ensure the math implies visual completion at 0.
+
+            // New Logic: Parallax only (no opacity fade out at top)
+            if (heroContent) {
+              const translateY = Math.max(0, 30 * progress); // Move down slightly as we scroll
+              heroContent.style.transform = `translateY(${translateY}px)`;
+              heroContent.style.opacity = ''; // Ensure CSS controls opacity (visible)
+            }
+
+            if (heroStats) {
+              const statsTranslateY = Math.max(0, 20 * progress);
+              heroStats.style.transform = `translateY(${statsTranslateY}px)`;
+              heroStats.style.opacity = '';
+            }
+          } else {
+            // Desktop: cleanup
+            if (heroContent) {
+              heroContent.style.opacity = '';
+              heroContent.style.transform = '';
+            }
+            if (heroStats) {
+              heroStats.style.opacity = '';
+              heroStats.style.transform = '';
+            }
+          }
+        }
+
+        ticking = false;
+      };
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(updateVideoTime);
+          ticking = true;
+        }
+      }, { passive: true });
+
+      // Initial call
+      updateVideoTime();
+
+      // Handle resize
+      window.addEventListener('resize', () => {
+        // Force update to handle layout changes
+        requestAnimationFrame(updateVideoTime);
+      });
+    });
+
+    // Video cards - play on hover
+    document.querySelectorAll('.work__item--video').forEach(item => {
+      const video = item.querySelector('.work__video');
+      if (!video) return;
+
+      item.addEventListener('mouseenter', () => {
+        video.play().catch(() => { });
+      });
+
+      item.addEventListener('mouseleave', () => {
+        video.pause();
+        video.currentTime = 0;
+      });
+    });
+  </script>
+</body>
+
+</html>

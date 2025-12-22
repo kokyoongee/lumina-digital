@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Artisan Collective - Curated handcrafted goods from master artisans around the world.">
+
+  <title>Artisan Collective | Handcrafted Luxury</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏺</text></svg>">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement">
+    <p>Free shipping on orders over RM 500 — <a href="#">Shop Now</a></p>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <button class="nav__menu-btn" aria-label="Menu">
+        <span></span>
+        <span></span>
+      </button>
+
+      <a href="/" class="nav__logo">Artisan Collective</a>
+
+      <ul class="nav__links">
+        <li><a href="#shop" class="nav__link">Shop</a></li>
+        <li><a href="#collections" class="nav__link">Collections</a></li>
+        <li><a href="#artisans" class="nav__link">Our Artisans</a></li>
+        <li><a href="#story" class="nav__link">Our Story</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <button class="nav__action" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <button class="nav__action nav__cart" aria-label="Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="nav__cart-count">2</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero__content">
+      <span class="hero__eyebrow">New Collection</span>
+      <h1 class="hero__title">Made by Hand,<br><em>Made to Last</em></h1>
+      <p class="hero__subtitle">
+        Discover exceptional craftsmanship from master artisans.
+        Every piece tells a story.
+      </p>
+      <a href="#shop" class="btn btn--primary">Explore Collection</a>
+    </div>
+    <div class="hero__image">
+      <img
+        src="https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?w=800&q=90"
+        alt="Handcrafted ceramics"
+      >
+    </div>
+    <div class="hero__scroll">
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee">
+    <div class="marquee__track">
+      <span>Handcrafted with Love</span>
+      <span>◆</span>
+      <span>Ethically Sourced</span>
+      <span>◆</span>
+      <span>Small Batch Production</span>
+      <span>◆</span>
+      <span>Supporting Artisans</span>
+      <span>◆</span>
+      <span>Handcrafted with Love</span>
+      <span>◆</span>
+      <span>Ethically Sourced</span>
+      <span>◆</span>
+      <span>Small Batch Production</span>
+      <span>◆</span>
+      <span>Supporting Artisans</span>
+      <span>◆</span>
+    </div>
+  </div>
+
+  <!-- Featured Products -->
+  <section id="shop" class="products">
+    <div class="container">
+      <header class="section-header">
+        <span class="section-header__eyebrow">Curated Selection</span>
+        <h2 class="section-header__title">Featured Pieces</h2>
+      </header>
+
+      <div class="products-grid">
+        <!-- Product 1: Terra Sculptural Vase -->
+        <article class="product-card">
+          <a href="#" class="product-card__link">
+            <div class="product-card__image-wrapper">
+              <img
+                src="images/vase-main.jpg"
+                alt="Terra Sculptural Vase"
+                class="product-card__image"
+              >
+              <img
+                src="images/vase-hover.jpg"
+                alt="Terra Sculptural Vase - Detail"
+                class="product-card__image product-card__image--hover"
+              >
+              <span class="product-card__badge">Bestseller</span>
+            </div>
+            <div class="product-card__content">
+              <span class="product-card__category">Ceramics</span>
+              <h3 class="product-card__title">Terra Sculptural Vase</h3>
+              <span class="product-card__price">RM 380</span>
+            </div>
+          </a>
+          <button class="product-card__add">Add to Cart</button>
+        </article>
+
+        <!-- Product 2: Rattan Storage Basket -->
+        <article class="product-card">
+          <a href="#" class="product-card__link">
+            <div class="product-card__image-wrapper">
+              <img
+                src="images/basket-main.jpg"
+                alt="Rattan Storage Basket"
+                class="product-card__image"
+              >
+              <img
+                src="images/basket-hover.jpg"
+                alt="Rattan Storage Basket - Styled"
+                class="product-card__image product-card__image--hover"
+              >
+              <span class="product-card__badge product-card__badge--new">New</span>
+            </div>
+            <div class="product-card__content">
+              <span class="product-card__category">Weaving</span>
+              <h3 class="product-card__title">Rattan Storage Basket</h3>
+              <span class="product-card__price">RM 220</span>
+            </div>
+          </a>
+          <button class="product-card__add">Add to Cart</button>
+        </article>
+
+        <!-- Product 3: Carved Acacia Bowl -->
+        <article class="product-card">
+          <a href="#" class="product-card__link">
+            <div class="product-card__image-wrapper">
+              <img
+                src="images/bowl-main.jpg"
+                alt="Carved Acacia Bowl"
+                class="product-card__image"
+              >
+              <img
+                src="images/bowl-hover.jpg"
+                alt="Carved Acacia Bowl - In Use"
+                class="product-card__image product-card__image--hover"
+              >
+            </div>
+            <div class="product-card__content">
+              <span class="product-card__category">Woodwork</span>
+              <h3 class="product-card__title">Carved Acacia Bowl</h3>
+              <span class="product-card__price">RM 290</span>
+            </div>
+          </a>
+          <button class="product-card__add">Add to Cart</button>
+        </article>
+
+        <!-- Product 4: Hand-dyed Linen Napkin Set -->
+        <article class="product-card">
+          <a href="#" class="product-card__link">
+            <div class="product-card__image-wrapper">
+              <img
+                src="images/linen-main.jpg"
+                alt="Hand-dyed Linen Napkin Set"
+                class="product-card__image"
+              >
+              <img
+                src="images/linen-hover.jpg"
+                alt="Hand-dyed Linen Napkin Set - Detail"
+                class="product-card__image product-card__image--hover"
+              >
+            </div>
+            <div class="product-card__content">
+              <span class="product-card__category">Textiles</span>
+              <h3 class="product-card__title">Hand-dyed Linen Napkin Set</h3>
+              <span class="product-card__price">RM 180</span>
+            </div>
+          </a>
+          <button class="product-card__add">Add to Cart</button>
+        </article>
+
+        <!-- Product 5: Speckled Stoneware Plate -->
+        <article class="product-card">
+          <a href="#" class="product-card__link">
+            <div class="product-card__image-wrapper">
+              <img
+                src="images/plate-main.jpg"
+                alt="Speckled Stoneware Plate"
+                class="product-card__image"
+              >
+              <img
+                src="images/plate-hover.jpg"
+                alt="Speckled Stoneware Plate - Styled"
+                class="product-card__image product-card__image--hover"
+              >
+            </div>
+            <div class="product-card__content">
+              <span class="product-card__category">Ceramics</span>
+              <h3 class="product-card__title">Speckled Stoneware Plate</h3>
+              <span class="product-card__price">RM 120</span>
+            </div>
+          </a>
+          <button class="product-card__add">Add to Cart</button>
+        </article>
+
+        <!-- Product 6: Brass Candle Holder -->
+        <article class="product-card">
+          <a href="#" class="product-card__link">
+            <div class="product-card__image-wrapper">
+              <img
+                src="images/candle-main.jpg"
+                alt="Brass Candle Holder"
+                class="product-card__image"
+              >
+              <img
+                src="images/candle-hover.jpg"
+                alt="Brass Candle Holder - Lit"
+                class="product-card__image product-card__image--hover"
+              >
+            </div>
+            <div class="product-card__content">
+              <span class="product-card__category">Metalwork</span>
+              <h3 class="product-card__title">Brass Candle Holder</h3>
+              <span class="product-card__price">RM 260</span>
+            </div>
+          </a>
+          <button class="product-card__add">Add to Cart</button>
+        </article>
+      </div>
+
+      <div class="products-cta">
+        <a href="#" class="btn btn--outline">View All Products</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collections Section -->
+  <section id="collections" class="collections">
+    <div class="container">
+      <header class="section-header">
+        <span class="section-header__eyebrow">Shop by</span>
+        <h2 class="section-header__title">Collections</h2>
+      </header>
+
+      <div class="collections-grid">
+        <a href="#" class="collection-card collection-card--large">
+          <img
+            src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=800&q=90"
+            alt="Home Collection"
+            class="collection-card__image"
+          >
+          <div class="collection-card__content">
+            <h3 class="collection-card__title">Home & Living</h3>
+            <span class="collection-card__count">42 pieces</span>
+          </div>
+        </a>
+
+        <a href="#" class="collection-card">
+          <img
+            src="images/collection-kitchen.jpg"
+            alt="Kitchen & Dining Collection"
+            class="collection-card__image"
+          >
+          <div class="collection-card__content">
+            <h3 class="collection-card__title">Kitchen & Dining</h3>
+            <span class="collection-card__count">28 pieces</span>
+          </div>
+        </a>
+
+        <a href="#" class="collection-card">
+          <img
+            src="images/collection-textiles.jpg"
+            alt="Textiles Collection"
+            class="collection-card__image"
+          >
+          <div class="collection-card__content">
+            <h3 class="collection-card__title">Textiles</h3>
+            <span class="collection-card__count">35 pieces</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="process">
+    <div class="container">
+      <div class="process-grid">
+        <div class="process__content">
+          <span class="section-header__eyebrow">Our Process</span>
+          <h2 class="process__title">From Hands<br><em>to Home</em></h2>
+          <p class="process__text">
+            Every item in our collection is carefully sourced directly from skilled
+            artisans. We visit workshops, understand techniques passed down through
+            generations, and ensure fair compensation for exceptional work.
+          </p>
+
+          <div class="process-steps">
+            <div class="process-step">
+              <span class="process-step__number">01</span>
+              <div class="process-step__content">
+                <h4>Discover</h4>
+                <p>We seek out master artisans preserving traditional crafts</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <span class="process-step__number">02</span>
+              <div class="process-step__content">
+                <h4>Collaborate</h4>
+                <p>Working together to create pieces that honor heritage</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <span class="process-step__number">03</span>
+              <div class="process-step__content">
+                <h4>Deliver</h4>
+                <p>Bringing handcrafted beauty directly to your home</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="process__images">
+          <img
+            src="images/process-work.jpg"
+            alt="Artisan hands weaving"
+            class="process__image process__image--1"
+          >
+          <img
+            src="images/process-materials.jpg"
+            alt="Raw craft materials"
+            class="process__image process__image--2"
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Artisans Section -->
+  <section id="artisans" class="artisans">
+    <div class="container">
+      <header class="section-header">
+        <span class="section-header__eyebrow">The Makers</span>
+        <h2 class="section-header__title">Meet Our Artisans</h2>
+        <p class="section-header__subtitle">
+          Behind every piece is a person with decades of dedication to their craft
+        </p>
+      </header>
+
+      <div class="artisans-grid">
+        <article class="artisan-card">
+          <div class="artisan-card__image-wrapper">
+            <img
+              src="images/artisan-ahmad.jpg"
+              alt="Ahmad Bin Hassan - Master Potter"
+              class="artisan-card__image"
+            >
+          </div>
+          <div class="artisan-card__content">
+            <h3 class="artisan-card__name">Ahmad Bin Hassan</h3>
+            <span class="artisan-card__craft">Master Potter • Perak</span>
+            <p class="artisan-card__bio">
+              Third-generation potter keeping the Labu Sayong tradition alive
+              with contemporary designs.
+            </p>
+            <a href="#" class="artisan-card__link">View Work →</a>
+          </div>
+        </article>
+
+        <article class="artisan-card">
+          <div class="artisan-card__image-wrapper">
+            <img
+              src="images/artisan-siti.jpg"
+              alt="Siti Aminah - Textile Weaver"
+              class="artisan-card__image"
+            >
+          </div>
+          <div class="artisan-card__content">
+            <h3 class="artisan-card__name">Siti Aminah</h3>
+            <span class="artisan-card__craft">Textile Weaver • Terengganu</span>
+            <p class="artisan-card__bio">
+              Creating intricate Songket patterns using techniques unchanged
+              for over 500 years.
+            </p>
+            <a href="#" class="artisan-card__link">View Work →</a>
+          </div>
+        </article>
+
+        <article class="artisan-card">
+          <div class="artisan-card__image-wrapper">
+            <img
+              src="images/artisan-lim.jpg"
+              alt="Lim Wei Ming - Woodworker"
+              class="artisan-card__image"
+            >
+          </div>
+          <div class="artisan-card__content">
+            <h3 class="artisan-card__name">Lim Wei Ming</h3>
+            <span class="artisan-card__craft">Woodworker • Penang</span>
+            <p class="artisan-card__bio">
+              Transforming reclaimed timber into functional art with
+              minimalist Japanese-inspired aesthetics.
+            </p>
+            <a href="#" class="artisan-card__link">View Work →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="testimonial">
+    <div class="container">
+      <blockquote class="testimonial__quote">
+        "Each piece from Artisan Collective carries a warmth that mass-produced
+        items simply cannot replicate. You can feel the maker's presence in
+        every curve and texture."
+      </blockquote>
+      <cite class="testimonial__author">
+        — Sarah Chen, Interior Designer
+      </cite>
+    </div>
+  </section>
+
+  <!-- Story Section -->
+  <section id="story" class="story">
+    <div class="story__image">
+      <img
+        src="https://images.pexels.com/photos/5302906/pexels-photo-5302906.jpeg?auto=compress&cs=tinysrgb&w=1000"
+        alt="Potter shaping clay"
+      >
+    </div>
+    <div class="story__content">
+      <span class="section-header__eyebrow">Our Story</span>
+      <h2 class="story__title">Preserving Craft,<br><em>One Piece at a Time</em></h2>
+      <p class="story__text">
+        Artisan Collective began with a simple belief: that handmade objects carry
+        an irreplaceable value in our increasingly automated world. We partner directly
+        with artisans across Malaysia and Southeast Asia, ensuring fair wages and
+        sustainable practices.
+      </p>
+      <p class="story__text">
+        When you purchase from us, you're not just buying a product—you're supporting
+        a craftsperson, preserving a tradition, and bringing home a piece with soul.
+      </p>
+      <a href="#" class="btn btn--primary">Learn More</a>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter__content">
+        <h2 class="newsletter__title">Join the Collective</h2>
+        <p class="newsletter__text">
+          Be the first to know about new artisans, limited editions, and stories from the workshop.
+        </p>
+        <form class="newsletter__form">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn btn--primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="/" class="footer__logo">Artisan Collective</a>
+          <p class="footer__tagline">Handcrafted goods for thoughtful living.</p>
+          <div class="footer__social">
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="Pinterest">PIN</a>
+            <a href="#" aria-label="Facebook">FB</a>
+          </div>
+        </div>
+
+        <div class="footer__links">
+          <div class="footer__column">
+            <h4>Shop</h4>
+            <a href="#">All Products</a>
+            <a href="#">Ceramics</a>
+            <a href="#">Textiles</a>
+            <a href="#">Woodwork</a>
+            <a href="#">Gift Cards</a>
+          </div>
+          <div class="footer__column">
+            <h4>About</h4>
+            <a href="#">Our Story</a>
+            <a href="#">Artisans</a>
+            <a href="#">Sustainability</a>
+            <a href="#">Press</a>
+          </div>
+          <div class="footer__column">
+            <h4>Help</h4>
+            <a href="#">Shipping</a>
+            <a href="#">Returns</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© <span id="current-year"></span> Artisan Collective. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Lumina -->
+  <a href="../" class="back-link">← Back to Lumina</a>
+
+  <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

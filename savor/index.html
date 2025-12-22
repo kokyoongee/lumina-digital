@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAVOR | Fine Dining Experience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="#" class="logo">SAVOR.</a>
+        <div class="nav-links">
+            <a href="#menu">Menu</a>
+            <a href="#chef">The Chef</a>
+            <a href="#reserve" class="btn-reserve">Reserve Table</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-video-bg">
+            <video id="hero-video" loop muted playsinline preload="metadata" poster="./hero-image.jpg">
+                <source src="./fine-dining.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <span class="eyebrow">The Art of Gastronomy</span>
+            <h1>Taste the<br>Extraordinary</h1>
+            <p>An immersive culinary journey inspired by nature.</p>
+            <a href="#reserve" class="btn-hero">Book Experience</a>
+        </div>
+    </header>
+
+    <!-- The Experience (Parallax) -->
+    <section class="experience">
+        <div class="container split">
+            <div class="text-block">
+                <h2>Atmosphere</h2>
+                <p>Dining at Savor is not just a meal; it is a performance. Surrounded by velvet and gold, our
+                    space is designed to heighten your senses. Every detail, from the ambient lighting to the
+                    hand-crafted ceramics, tells a story of elegance.</p>
+            </div>
+            <img src="./restaurant-atmostphere.jpg" alt="Luxury Interior Detail" class="image-block aspect-portrait">
+        </div>
+    </section>
+
+    <!-- The Source (Nature x Gastronomy) -->
+    <section class="source">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow">The Origin</span>
+                <h2>From the Wild</h2>
+            </div>
+            <div class="source-grid">
+                <div class="source-item">
+                    <img src="./victoria-druc-ZdX5JCgGdDM-unsplash.jpg" alt="The Fields">
+                    <div class="caption">Sustainable Farming</div>
+                </div>
+                <div class="text-block centered-text">
+                    <p>We believe flavor begins in the earth. Our ingredients are sourced from wild fields and pristine
+                        waters, ensuring that every dish connects you to nature in its purest form.</p>
+                </div>
+                <div class="source-item">
+                    <img src="./alexandra-leru-KzYsDazw9Ks-unsplash.jpg" alt="The Waters">
+                    <div class="caption">Ethical Sourcing</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Highlights -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow">Seasonal Tasting</span>
+                <h2>Curated Selections</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="./lobster.jpeg" alt="Lobster Dish" class="dish-image">
+                    <h3>Coastal Harvest</h3>
+                    <p>Fresh Atlantic lobster, white wine reduction, herb butter.</p>
+                </div>
+                <div class="menu-item">
+                    <img src="./wagyu.jpeg" alt="Wagyu Steak" class="dish-image">
+                    <h3>Obsidian Marble</h3>
+                    <p>Grade A5 Wagyu, truffle potato purée, rosemary reduction.</p>
+                </div>
+                <div class="menu-item">
+                    <img src="./pexels-cottonbro-4694569.jpg" alt="Amber Drink" class="dish-image">
+                    <h3>Autumn Elixir</h3>
+                    <p>Spiced amber infusion, cinnamon smoke, crystal glass service.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chef's Table -->
+    <section id="chef" class="chef">
+        <div class="container split reverse">
+            <div class="text-block">
+                <span class="eyebrow">The Visionary</span>
+                <h2>Chef Adrian Laurent</h2>
+                <p>"We don't just cook food; we craft memories. My philosophy is rooted in respecting the ingredient
+                    and pushing the boundaries of what flavor can be."</p>
+            </div>
+            <img src="./urban-gyllstrom-MaWMfm-HCqQ-unsplash.jpg" alt="Chef Preparation"
+                class="image-block aspect-square">
+        </div>
+    </section>
+
+    <!-- Reservation / Footer -->
+    <footer id="reserve" class="footer">
+        <div class="container">
+            <h2>Secure Your Table</h2>
+            <p>Limited seating available for our tasting menu.</p>
+            <a href="#" class="btn-reserve large">Check Availability</a>
+            <div class="footer-meta">
+                <p>&copy; 2025 Savor Restaurant (Demo by Lumina Digital)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar Scroll Effect
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Hero Video Scroll Scrub (Forward)
+        const video = document.getElementById('hero-video');
+        let heroHeight = window.innerHeight;
+        let isVideoReady = false;
+
+        function updateVideo() {
+            if (!isVideoReady) return; // Don't scrub until ready
+
+            const scrollPos = window.scrollY;
+            // Play video over the course of scrolling 0.75x the hero height
+            const scrollRange = heroHeight * 0.75;
+
+            if (scrollPos < scrollRange) {
+                const progress = Math.min(scrollPos / scrollRange, 1);
+
+                if (video.duration) {
+                    // Forward: Top of page = Start of video. Scroll down -> Advance video.
+                    video.currentTime = video.duration * progress;
+                }
+            }
+            requestAnimationFrame(updateVideo);
+        }
+
+        function initVideo() {
+            heroHeight = window.innerHeight;
+            video.currentTime = 0;
+            isVideoReady = true; // Enable scrubbing
+            requestAnimationFrame(updateVideo);
+        }
+
+        video.addEventListener('loadedmetadata', initVideo);
+
+        // Retrigger if already loaded
+        if (video.readyState >= 1) {
+            initVideo();
+        }
+
+        // Mobile fallback: trigger video load on first interaction
+        function triggerVideoLoad() {
+            if (!isVideoReady && video.readyState < 1) {
+                video.load();
+            }
+            // Remove listeners after first trigger
+            window.removeEventListener('touchstart', triggerVideoLoad);
+            window.removeEventListener('scroll', triggerVideoLoad);
+        }
+        window.addEventListener('touchstart', triggerVideoLoad, { once: true, passive: true });
+        window.addEventListener('scroll', triggerVideoLoad, { once: true, passive: true });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+{
+  "name": "lumina-website",
+  "description": "Lumina Digital agency website and portfolio demo templates",
+  "status": "in-progress",
+  "currentFocus": "Building portfolio demo templates for different industries",
+
+  "templates": [
+    {
+      "name": "artisan",
+      "type": "E-commerce",
+      "industry": "Handcrafted Goods",
+      "status": "draft",
+      "description": "Artisan Collective - Curated handcrafted luxury goods"
+    },
+    {
+      "name": "aurora",
+      "type": "Service Business",
+      "industry": "Spa & Wellness",
+      "status": "draft",
+      "description": "Aurora Wellness - Spa and wellness sanctuary"
+    },
+    {
+      "name": "meridian",
+      "type": "Service Business",
+      "industry": "Real Estate",
+      "status": "draft",
+      "description": "Meridian Properties - Luxury real estate"
+    },
+    {
+      "name": "noir",
+      "type": "Agency",
+      "industry": "Creative Services",
+      "status": "in-progress",
+      "description": "Noir Studio - Creative agency portfolio"
+    },
+    {
+      "name": "savor",
+      "type": "F&B",
+      "industry": "Fine Dining",
+      "status": "in-progress",
+      "description": "SAVOR - Fine dining restaurant experience"
+    }
+  ],
+
+  "goals": [
+    { "text": "Create Lumina agency website", "done": false },
+    { "text": "Develop 5 industry-specific demo templates", "done": false },
+    { "text": "Optimize all templates for mobile", "done": false },
+    { "text": "Build portfolio/case study section", "done": false }
+  ],
+
+  "activeTasks": [
+    "Refine Noir Studio template",
+    "Refine Savor restaurant template"
+  ],
+
+  "completedTasks": [
+    { "task": "Initial project setup", "date": "2025-12-10" },
+    { "task": "Initial template structure for all 5 demos", "date": "2025-12-10" },
+    { "task": "Interactive design spec documentation", "date": "2025-12-17" },
+    { "task": "Reorganized project structure", "date": "2025-12-17" }
+  ],
+
+  "recentChanges": [
+    "Moved website files to dedicated /website folder",
+    "Updated Noir hero layout and footer",
+    "Added poster image to Neon Dreams video for mobile"
+  ],
+
+  "nextActions": [
+    "Complete Noir and Savor templates",
+    "Add responsive breakpoints to all templates",
+    "Create main portfolio landing page"
+  ],
+
+  "techStack": {
+    "framework": "Vite",
+    "styling": "CSS (custom per template)"
+  },
+
+  "lastWorkedOn": "2025-12-17",
+  "lastUpdated": "2025-12-17T17:10:00Z"
+}
